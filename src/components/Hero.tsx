@@ -16,7 +16,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-black mb-6 leading-tight font-lora">
-              Das Menschliche Gehirn <em className="italic">Ease Kids</em>
+              Das Menschliche
               <span className="text-black"> Gehirn</span>
             </h1>
             

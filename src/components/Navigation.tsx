@@ -23,7 +23,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <img src="/image.png" alt="Logo" className="h-10 w-10" />
-            <span className="font-bold text-xl text-black font-lora">Das Gehirn</span>
+            <span className="font-bold text-xl text-black font-lora">Ease Kids</span>
           </div>
           
           <div className="hidden md:flex space-x-8">
