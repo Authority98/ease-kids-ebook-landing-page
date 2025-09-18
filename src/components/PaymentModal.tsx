@@ -97,27 +97,54 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation check
+    const requiredFields = ['firstName', 'lastName', 'email', 'cardNumber', 'expiryDate', 'cvv'];
+    const isValid = requiredFields.every(field => formData[field as keyof FormData].trim() !== '');
+    
+    if (!isValid) {
+      alert('Bitte füllen Sie alle Felder aus.');
+      return;
+    }
+    
     setIsProcessing(true);
     
     // Simulate payment processing
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsProcessing(false);
-    setCurrentStep('success');
+    // Use setTimeout to ensure DOM is ready for step transition
+    setTimeout(() => {
+      setCurrentStep('success');
+    }, 0);
   };
 
   const handleDownload = () => {
-    // Create a proper PDF download link
-    const link = document.createElement('a');
-    link.href = '/book-cover.png'; // This would be replaced with actual PDF URL
-    link.download = 'Das-Menschliche-Gehirn-Ebook.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    // Show success message
-    alert('Download gestartet! Das E-Book wird heruntergeladen...');
+    // Use a more React-friendly approach for download
+    try {
+      const link = document.createElement('a');
+      link.href = '/book-cover.png'; // This would be replaced with actual PDF URL
+      link.download = 'Das-Menschliche-Gehirn-Ebook.pdf';
+      link.target = '_blank';
+      link.style.display = 'none';
+      
+      // Temporarily append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      
+      // Use setTimeout to ensure the click event is processed before removal
+      setTimeout(() => {
+        if (document.body.contains(link)) {
+          document.body.removeChild(link);
+        }
+      }, 100);
+      
+      // Show success message
+      alert('Download gestartet! Das E-Book wird heruntergeladen...');
+    } catch (error) {
+      console.error('Download error:', error);
+      alert('Download konnte nicht gestartet werden. Bitte versuchen Sie es erneut.');
+    }
   };
 
   if (!isOpen) return null;
@@ -141,7 +168,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {currentStep === 'payment' ? (
-          <>
+          <div data-step="payment">
             {/* Header */}
             <div className="relative p-6 text-center border-b border-[#77A060]/20">
               <button
@@ -291,9 +318,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
                 🔒 SSL-verschlüsselt • 30 Tage Geld-zurück-Garantie
               </p>
             </form>
-          </>
+          </div>
         ) : (
           /* Success Screen */
+          <div data-step="success">
           <div className="p-6 text-center">
             <div className="mb-6">
               <div className="w-20 h-20 bg-gradient-to-r from-green-100 to-[#77A060]/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
@@ -348,6 +376,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
                 Du erhältst auch eine Rechnung und Downloadlinks per E-Mail.
               </p>
             </div>
+          </div>
           </div>
         )}
       </div>

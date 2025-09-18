@@ -8,18 +8,22 @@ import VideoSection from './components/VideoSection';
 import PurchaseSection from './components/PurchaseSection';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F9F1E2' }}>
+      <TopBar discountPercentage={25} durationMinutes={30} />
       {/* <Navigation /> */}
-      <Hero />
-      <BookPreview />
-      <BookDetails />
-      <Author />
-      <Reviews />
-      <PurchaseSection />
-      {/* <Footer /> */}
+      <div className="pt-20"> {/* Add padding to account for fixed top bar */}
+        <Hero />
+        <BookPreview />
+        <BookDetails />
+        <Author />
+        <Reviews />
+        <PurchaseSection />
+        {/* <Footer /> */}
+      </div>
     </div>
   );
 }

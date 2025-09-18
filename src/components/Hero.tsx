@@ -57,9 +57,9 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <div className="flex items-center justify-start space-x-1 mb-6 z-20 relative" >
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-300 fill-current" />
+                <Star key={i} className="w-6 h-6 bg-gradient-to-r from-[#77A060] to-green-600 bg-clip-text text-transparent fill-current drop-shadow-lg shadow-[#77A060]/30" style={{fill: 'url(#starGradient)', filter: 'drop-shadow(0 4px 6px rgba(119, 160, 96, 0.3))'}} />
               ))}
-              <span className="text-black ml-2">4.9/5 (1,247 Bewertungen)</span>
+              <span className="text-black ml-2 font-semibold">4.9/5</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-black mb-6 leading-tight font-lora">
@@ -111,9 +111,9 @@ const Hero = () => {
                 <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                  className="w-80 h-100 object-cover rounded-2xl shadow-2xl"
+                  className="w-96 h-[28rem] object-cover rounded-2xl shadow-2xl"
                 />
-                <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700">
+                <div className="absolute -top-4 -right-4 text-white font-bold px-6 py-3 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 text-lg">
                   Bestseller!
                 </div>
               </div>
@@ -121,6 +121,16 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* SVG Gradient Definition for Stars */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#77A060" />
+            <stop offset="100%" stopColor="#16a34a" />
+          </linearGradient>
+        </defs>
+      </svg>
 
       <VideoPopup
         videoUrl="/file notion soff4ba56e7e-57ed-400d-9030-c03c0514f7e68d6ddfa9-43f.mp4"

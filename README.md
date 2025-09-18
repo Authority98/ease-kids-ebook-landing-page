@@ -138,6 +138,25 @@ vite.config.ts
   - Improved call-to-action## Recent Updates
 
 ### Latest UI/UX Enhancements (January 2025)
+- **Top Bar with Countdown Timer**:
+  - Added beautiful promotional top bar with 30-minute countdown timer
+  - 25% discount messaging with animated progress bar
+  - Responsive design for mobile and desktop
+  - Smooth animations and professional styling
+  - Auto-hide functionality when timer expires
+
+- **Payment Modal Stability Fixes**:
+  - Fixed persistent blank page issue after payment submission
+  - Added setTimeout wrapper for DOM manipulation safety
+  - Improved React Fragment handling to prevent insertBefore errors
+  - Enhanced error handling and state management
+
+- **Hero Section Enhancements**:
+  - Added 4.9/5 rating text back next to stars
+  - Enlarged bestseller book image for better visibility
+  - Enhanced shadow effects on stars with gradient styling
+  - Removed review count for cleaner presentation
+
 - **Icon System Overhaul**:
   - Replaced sparkle icons with relevant educational icons (Brain, BookOpen, GraduationCap, etc.)
   - Restricted Brain icons to appear only in the Hero section for focused branding
