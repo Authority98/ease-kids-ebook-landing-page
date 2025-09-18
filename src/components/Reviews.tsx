@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
+import PaymentModal from './PaymentModal';
 
 const Reviews = () => {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+
+  const handleOpenPayment = () => {
+    setIsPaymentOpen(true);
+  };
+
+  const handleClosePayment = () => {
+    setIsPaymentOpen(false);
+  };
+
   const reviews = [
     {
       name: "Anna Müller",
@@ -108,12 +119,21 @@ const Reviews = () => {
             <p className="text-black mb-6 font-inter">
               "Das Menschliche Gehirn" ist das perfekte Buch für neugierige Kinder, die verstehen wollen, wie ihr Gehirn funktioniert.
             </p>
-            <button className="text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+            <button 
+              className="text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg font-inter" 
+              style={{ backgroundColor: '#77A060' }}
+              onClick={handleOpenPayment}
+            >
               Jetzt dein Exemplar sichern
             </button>
           </div>
         </div>
       </div>
+
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={handleClosePayment}
+      />
     </section>
   );
 };

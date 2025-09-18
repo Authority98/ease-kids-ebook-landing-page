@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Download, BookOpen, Headphones, Tablet, Check, Gift } from 'lucide-react';
+import PaymentModal from './PaymentModal';
 
 const PurchaseSection = () => {
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+
+  const handleOpenPayment = () => {
+    setIsPaymentOpen(true);
+  };
+
+  const handleClosePayment = () => {
+    setIsPaymentOpen(false);
+  };
+
   const formats = [
     {
       icon: <Download className="w-8 h-8" style={{ color: '#77A060' }} />,
@@ -97,28 +108,30 @@ const PurchaseSection = () => {
                   </div>
                 </div>
                 
-                <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter ${
-                  format.popular
-                    ? 'text-white transform hover:scale-105 shadow-lg'
-                    : 'border-2 text-black hover:text-white'
-                }`}
-                style={{ 
-                  backgroundColor: format.popular ? '#77A060' : 'transparent',
-                  borderColor: format.popular ? 'transparent' : '#77A060'
-                }}
-                onMouseEnter={(e) => {
-                  if (!format.popular) {
-                    e.currentTarget.style.backgroundColor = '#77A060';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!format.popular) {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }
-                }}
-              >
-                {format.popular ? 'E-Book kaufen' : `${format.title} wählen`}
-              </button>
+                <button 
+                  className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter ${
+                    format.popular
+                      ? 'text-white transform hover:scale-105 shadow-lg'
+                      : 'border-2 text-black hover:text-white'
+                  }`}
+                  style={{ 
+                    backgroundColor: format.popular ? '#77A060' : 'transparent',
+                    borderColor: format.popular ? 'transparent' : '#77A060'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!format.popular) {
+                      e.currentTarget.style.backgroundColor = '#77A060';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!format.popular) {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    }
+                  }}
+                  onClick={handleOpenPayment}
+                >
+                  {format.popular ? 'E-Book kaufen' : `${format.title} wählen`}
+                </button>
               </div>
             </div>
           ))}
@@ -184,6 +197,11 @@ const PurchaseSection = () => {
           </div>
         </div>
       </div>
+
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={handleClosePayment}
+      />
     </section>
   );
 };

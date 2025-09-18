@@ -92,6 +92,29 @@ vite.config.ts
 
 ## Recent Updates
 
+### Version 3.0 - Enhanced Payment Experience & UI Improvements
+- **Simplified Payment Modal**: 
+  - Removed billing address requirement for streamlined checkout
+  - Reduced modal height for better user experience
+  - Added creative visual elements (Brain, Sparkles icons)
+  - Implemented warm color palette with gradients
+  - Enhanced success screen with animations and visual feedback
+  - Maintained security indicators and professional design
+
+- **Universal Buy Button Integration**:
+  - Connected all buy buttons across the landing page to PaymentModal
+  - Hero section "Jetzt kaufen" button ✅
+  - Video popup "Jetzt kaufen" button ✅  
+  - Purchase section format buttons (E-Book, Hardcover, Hörbuch) ✅
+  - Reviews section "Jetzt dein Exemplar sichern" button ✅
+  - Consistent payment flow across all entry points
+
+- **Design Consistency**:
+  - Matching fonts, colors, and spacing with landing page aesthetic
+  - Rounded design elements and modern styling
+  - Improved visual hierarchy and user experience
+  - Enhanced accessibility and responsive design
+
 ### Version 2.0 - Complete Interactive Experience
 - **PaymentModal Component**: Added comprehensive payment modal with:
   - Personal information form (name, email)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CreditCard, User, Mail, Download, CheckCircle, Lock } from 'lucide-react';
+import { X, CreditCard, User, Download, CheckCircle, Lock, Star, Brain, Sparkles } from 'lucide-react';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -13,9 +13,6 @@ interface FormData {
   cardNumber: string;
   expiryDate: string;
   cvv: string;
-  billingAddress: string;
-  city: string;
-  postalCode: string;
 }
 
 const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
@@ -27,10 +24,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
     email: '',
     cardNumber: '',
     expiryDate: '',
-    cvv: '',
-    billingAddress: '',
-    city: '',
-    postalCode: ''
+    cvv: ''
   });
 
   // Close modal on Escape key press
@@ -63,10 +57,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
         email: '',
         cardNumber: '',
         expiryDate: '',
-        cvv: '',
-        billingAddress: '',
-        city: '',
-        postalCode: ''
+        cvv: ''
       });
     }
   }, [isOpen]);
@@ -133,243 +124,221 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-2xl bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
+        className="relative w-full max-w-lg bg-gradient-to-br from-[#F9F1E2] to-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
+        style={{ backgroundColor: '#F9F1E2' }}
       >
+        {/* Decorative Elements */}
+        <div className="absolute top-4 right-4 opacity-20">
+          <Brain className="w-16 h-16 text-[#77A060]" />
+        </div>
+        <div className="absolute bottom-4 left-4 opacity-10">
+          <Sparkles className="w-12 h-12 text-[#77A060]" />
+        </div>
+
         {currentStep === 'payment' ? (
           <>
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white/90 backdrop-blur-sm">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center">
-                  <CreditCard className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 font-lora">Sichere Zahlung</h3>
-                  <p className="text-sm text-gray-600 font-inter">Das Menschliche Gehirn - €19.99</p>
-                </div>
-              </div>
-              
+            <div className="relative p-6 text-center border-b border-[#77A060]/20">
               <button
-                className="group w-10 h-10 bg-gray-100 hover:bg-red-100 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                className="absolute top-3 right-3 group w-8 h-8 bg-white/80 hover:bg-red-100 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-lg"
                 onClick={onClose}
                 aria-label="Zahlung schließen"
               >
-                <X className="w-5 h-5 text-gray-600 group-hover:text-red-600 transition-colors" />
+                <X className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors" />
               </button>
+
+              <div className="w-12 h-12 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
+                <CreditCard className="w-6 h-6 text-white" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
+              <p className="text-base text-gray-700 font-inter">Das Menschliche Gehirn</p>
+              
+              <div className="flex items-center justify-center space-x-1 mt-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+                <span className="text-xs text-gray-600 ml-2 font-inter">4.9/5 Bewertung</span>
+              </div>
             </div>
 
             {/* Payment Form */}
-            <form onSubmit={handleSubmit} className="p-6 space-y-6">
+            <form onSubmit={handleSubmit} className="p-6 space-y-4">
               {/* Personal Information */}
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center font-lora">
-                  <User className="w-5 h-5 mr-2 text-green-600" />
-                  Persönliche Daten
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-gray-900 flex items-center font-lora">
+                  <User className="w-4 h-4 mr-2 text-[#77A060]" />
+                  Deine Daten
                 </h4>
-                <div className="grid grid-cols-2 gap-4">
+                
+                <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Vorname</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                      placeholder="Max"
+                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="Vorname"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Nachname</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                      placeholder="Mustermann"
+                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="Nachname"
                     />
                   </div>
                 </div>
-                <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">E-Mail</label>
+                
+                <div>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                    placeholder="max@example.com"
+                    className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                    placeholder="E-Mail Adresse"
                   />
                 </div>
               </div>
 
               {/* Payment Information */}
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center font-lora">
-                  <Lock className="w-5 h-5 mr-2 text-green-600" />
+              <div className="space-y-3">
+                <h4 className="text-lg font-semibold text-gray-900 flex items-center font-lora">
+                  <Lock className="w-4 h-4 mr-2 text-[#77A060]" />
                   Zahlungsdaten
                 </h4>
-                <div className="space-y-4">
+                
+                <div>
+                  <input
+                    type="text"
+                    name="cardNumber"
+                    value={formData.cardNumber}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                    placeholder="1234 5678 9012 3456"
+                  />
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Kartennummer</label>
                     <input
                       type="text"
-                      name="cardNumber"
-                      value={formData.cardNumber}
+                      name="expiryDate"
+                      value={formData.expiryDate}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                      placeholder="1234 5678 9012 3456"
+                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="MM/YY"
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Ablaufdatum</label>
-                      <input
-                        type="text"
-                        name="expiryDate"
-                        value={formData.expiryDate}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                        placeholder="MM/YY"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">CVV</label>
-                      <input
-                        type="text"
-                        name="cvv"
-                        value={formData.cvv}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                        placeholder="123"
-                      />
-                    </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="cvv"
+                      value={formData.cvv}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="CVV"
+                    />
                   </div>
                 </div>
               </div>
 
-              {/* Billing Address */}
-              <div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center font-lora">
-                  <Mail className="w-5 h-5 mr-2 text-green-600" />
-                  Rechnungsadresse
-                </h4>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Straße und Hausnummer</label>
-                    <input
-                      type="text"
-                      name="billingAddress"
-                      value={formData.billingAddress}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                      placeholder="Musterstraße 123"
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">Stadt</label>
-                      <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                        placeholder="Berlin"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2 font-inter">PLZ</label>
-                      <input
-                        type="text"
-                        name="postalCode"
-                        value={formData.postalCode}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all font-inter"
-                        placeholder="10115"
-                      />
-                    </div>
-                  </div>
+              {/* Price Display */}
+              <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border-2 border-[#77A060]/20">
+                <div className="flex items-center justify-between">
+                  <span className="text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
+                  <span className="text-xl font-bold text-[#77A060] font-lora">€19.99</span>
                 </div>
+                <p className="text-xs text-gray-600 mt-1 font-inter">✨ Sofortiger Download nach dem Kauf</p>
               </div>
 
               {/* Submit Button */}
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={isProcessing}
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-inter"
-                >
-                  {isProcessing ? (
-                    <div className="flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Zahlung wird verarbeitet...
-                    </div>
-                  ) : (
-                    'Jetzt kaufen - €19.99'
-                  )}
-                </button>
-                <p className="text-xs text-gray-500 text-center mt-2 font-inter">
-                  🔒 Ihre Daten sind sicher verschlüsselt
-                </p>
-              </div>
+              <button
+                type="submit"
+                disabled={isProcessing}
+                className="w-full bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-inter"
+              >
+                {isProcessing ? (
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    Zahlung wird verarbeitet...
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center">
+                    <Lock className="w-4 h-4 mr-2" />
+                    Sicher bezahlen - €19.99
+                  </div>
+                )}
+              </button>
+              
+              <p className="text-xs text-gray-500 text-center font-inter">
+                🔒 SSL-verschlüsselt • 30 Tage Geld-zurück-Garantie
+              </p>
             </form>
           </>
         ) : (
           /* Success Screen */
-          <div className="p-8 text-center">
+          <div className="p-6 text-center">
             <div className="mb-6">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-12 h-12 text-green-600" />
+              <div className="w-20 h-20 bg-gradient-to-r from-green-100 to-[#77A060]/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+                <CheckCircle className="w-12 h-12 text-[#77A060]" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2 font-lora">Vielen Dank!</h3>
-              <p className="text-lg text-gray-600 font-inter">
-                Ihr Kauf war erfolgreich. Das E-Book steht jetzt zum Download bereit!
+              <h3 className="text-3xl font-bold text-gray-900 mb-2 font-lora">Fantastisch!</h3>
+              <p className="text-lg text-gray-700 font-inter">
+                Dein E-Book wartet auf dich! 🎉
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6">
+            <div className="bg-gradient-to-r from-white/80 to-[#77A060]/10 rounded-2xl p-6 mb-6 border-2 border-[#77A060]/20">
               <div className="flex items-center justify-center mb-4">
-                <img 
-                  src="/book-cover.png" 
-                  alt="Das Menschliche Gehirn" 
-                  className="w-24 h-32 object-cover rounded-lg shadow-lg"
-                />
+                <div className="relative">
+                  <img 
+                    src="/book-cover.png" 
+                    alt="Das Menschliche Gehirn" 
+                    className="w-24 h-32 object-cover rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                  />
+                  <div className="absolute -top-2 -right-2 bg-[#77A060] text-white font-bold px-2 py-1 rounded-full text-xs transform rotate-12 shadow-lg font-inter">
+                    Bestseller!
+                  </div>
+                </div>
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2 font-lora">Das Menschliche Gehirn</h4>
-              <p className="text-gray-600 font-inter">Ihr digitales E-Book ist bereit!</p>
+              <h4 className="text-xl font-bold text-gray-900 mb-1 font-lora">Das Menschliche Gehirn</h4>
+              <p className="text-sm text-gray-600 font-inter">Bereit zum sofortigen Download!</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <button
                 onClick={handleDownload}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center font-inter"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center font-inter"
               >
                 <Download className="w-5 h-5 mr-2" />
-                E-Book herunterladen
+                E-Book jetzt herunterladen
               </button>
               
               <button
                 onClick={onClose}
-                className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200 font-inter"
+                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-colors duration-200 font-inter"
               >
-                Schließen
+                Fertig
               </button>
             </div>
 
-            <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
-              <p className="text-sm text-yellow-800 font-inter">
-                📧 Eine Bestätigungs-E-Mail mit dem Download-Link wurde an {formData.email} gesendet.
+            <div className="mt-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border-2 border-yellow-200">
+              <p className="text-xs text-yellow-800 font-inter flex items-center justify-center">
+                <Sparkles className="w-3 h-3 mr-1" />
+                Eine Bestätigungs-E-Mail wurde an {formData.email} gesendet!
               </p>
             </div>
           </div>
