@@ -49,23 +49,23 @@ const TopBar: React.FC<TopBarProps> = ({
     <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="bg-gradient-to-r from-[#77A060] to-green-700 backdrop-blur-sm border-b border-green-800/20 shadow-lg">
         <div className="container mx-auto px-4 py-1">
-          <div className="flex items-center justify-center space-x-6">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-6">
             {/* Left side - Offer text */}
-            <div className="flex items-center space-x-3">
-              <span className="text-lg">🔥</span>
-              <span className="text-sm font-medium text-white">Begrenztes Angebot</span>
-              <span className="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full font-semibold border border-white/30">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <span className="text-base sm:text-lg">🔥</span>
+              <span className="text-xs sm:text-sm font-medium text-white whitespace-nowrap">Begrenztes Angebot</span>
+              <span className="text-xs px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full font-semibold border border-white/30 whitespace-nowrap">
                 {discountPercentage}% SPAREN
               </span>
             </div>
             
             {/* Center - Timer with enhanced design */}
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-1">
-              <div className="flex items-center space-x-2">
-                <span className="text-xs font-medium text-white/90">Endet in</span>
+            <div className="flex items-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-4 py-1">
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <span className="text-xs font-medium text-white/90 whitespace-nowrap">Endet in</span>
               </div>
               <div className="flex space-x-1">
-                <div className="text-sm font-mono font-bold text-white bg-white/20 px-2 py-1 rounded-lg">
+                <div className="text-xs sm:text-sm font-mono font-bold text-white bg-white/20 px-1 sm:px-2 py-1 rounded-lg whitespace-nowrap">
                   {formatTime(timeLeft)}
                 </div>
               </div>

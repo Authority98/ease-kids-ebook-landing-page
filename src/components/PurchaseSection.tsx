@@ -206,10 +206,10 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
             Sichere Bezahlung mit branchenführender Verschlüsselung
           </p>
           <div className="flex items-center justify-center space-x-8">
-            <img src="/visa.webp" alt="VISA" className="h-8" />
-            <img src="/paypal.webp" alt="PayPal" className="h-8" />
-            <img src="/applepay.webp" alt="Apple Pay" className="h-8" />
-            <img src="/gpay.webp" alt="Google Pay" className="h-8" />
+            <img src="/visa.webp" alt="VISA" className="h-8 shadow-lg" />
+            <img src="/paypal.webp" alt="PayPal" className="h-8 shadow-lg" />
+            <img src="/applepay.webp" alt="Apple Pay" className="h-8 shadow-lg" />
+            <img src="/gpay.webp" alt="Google Pay" className="h-8 shadow-lg" />
           </div>
         </div>
       </div>

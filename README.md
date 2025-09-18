@@ -126,6 +126,12 @@ vite.config.ts
 - **Slimmer Profile**: Reduced vertical padding for more elegant appearance
 - **Simplified Elements**: Streamlined visual elements while maintaining functionality
 
+## Version 4.2 - Mobile Design Improvements (January 2025)
+
+- **Hero Rating Centering**: Rating element now centered on mobile devices only
+- **Top Bar Mobile Optimization**: Text stays in one line on mobile with responsive sizing
+- **Card Network Shadows**: Added shadow effects to payment method images for better visual depth
+
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 
   - Removed billing address requirement for streamlined checkout

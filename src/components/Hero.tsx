@@ -59,7 +59,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div className="flex items-center justify-start space-x-1 mb-6 z-20 relative" >
+            <div className="flex items-center justify-center lg:justify-start space-x-1 mb-6 z-20 relative" >
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 bg-gradient-to-r from-[#77A060] to-green-600 bg-clip-text text-transparent fill-current drop-shadow-lg shadow-[#77A060]/30" style={{fill: 'url(#starGradient)', filter: 'drop-shadow(0 4px 6px rgba(119, 160, 96, 0.3))'}} />
               ))}
