@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star, Download, Play } from 'lucide-react';
+import VideoPopup from './VideoPopup';
 
 const Hero = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const handleOpenVideo = () => {
+    setIsVideoOpen(true);
+  };
+
+  const handleCloseVideo = () => {
+    setIsVideoOpen(false);
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
+      <img 
+        src="/d1.png" 
+        alt="Decoration 1" 
+        className="absolute bottom-0 right-0 w-1/6 h-auto z-0 opacity-100"
+      />
+      <img 
+        src="/d2.png" 
+        alt="Decoration 2" 
+        className="absolute top-4 left-4 w-1/4 h-auto z-0 opacity-100"
+      />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start space-x-1 mb-6">
+            <div className="flex items-center justify-start space-x-1 mb-6 z-20 relative" >
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 text-yellow-300 fill-current" />
               ))}
@@ -29,7 +49,10 @@ const Hero = () => {
                 <Download className="inline w-5 h-5 mr-2" />
                 Jetzt kaufen
               </button>
-              <button className="group border-2 border-black text-black px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-black/10 font-inter">
+              <button
+                className="group border-2 border-black text-black px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-black/10 font-inter"
+                onClick={handleOpenVideo}
+              >
                 <Play className="inline w-5 h-5 mr-2" />
                 Vorschau ansehen
               </button>
@@ -58,7 +81,7 @@ const Hero = () => {
                 <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                  className="w-72 h-96 object-cover rounded-2xl shadow-lg"
+                  className="w-80 h-100 object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
                   Bestseller!
@@ -68,6 +91,12 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <VideoPopup
+        videoUrl="/file notion soff4ba56e7e-57ed-400d-9030-c03c0514f7e68d6ddfa9-43f.mp4"
+        isOpen={isVideoOpen}
+        onClose={handleCloseVideo}
+      />
     </section>
   );
 };

@@ -37,7 +37,14 @@ const BookDetails = () => {
 
   return (
     <section id="details" className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ 
+  backgroundImage: "url('/d3.png')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundColor: 'transparent',
+  opacity: 1
+}}> 
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">
             Warum dieses Buch besonders ist

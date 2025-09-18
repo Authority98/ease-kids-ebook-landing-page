@@ -3,7 +3,17 @@ import { Twitter, Linkedin, Globe, BookOpen } from 'lucide-react';
 
 const Author = () => {
   return (
-    <section id="author" className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
+    <section id="author" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20" style={{ backgroundColor: 'transparent' }}>
+      <img 
+        src="/d1.png" 
+        alt="Decoration 1" 
+        className="absolute bottom-0 right-0 w-1/6 h-auto z-0 opacity-100"
+      />
+      <img 
+        src="/d2.png" 
+        alt="Decoration 2" 
+        className="absolute top-4 left-4 w-1/4 h-auto z-0 opacity-100"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">

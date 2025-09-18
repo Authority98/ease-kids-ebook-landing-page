@@ -38,7 +38,13 @@ const PurchaseSection = () => {
   ];
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
+      <img 
+        src="/d3.png" 
+        alt="Background pattern"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
+        style={{ objectFit: 'repeat' }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">
@@ -72,7 +78,7 @@ const PurchaseSection = () => {
               )}
               
               <div className="text-center">
-                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 flex justify-center">
                   {format.icon}
                 </div>
                 
@@ -170,11 +176,11 @@ const PurchaseSection = () => {
           <p className="text-black mb-4 font-inter">
             Sichere Bezahlung mit branchenführender Verschlüsselung
           </p>
-          <div className="flex items-center justify-center space-x-8 text-black/60">
-            <span className="text-2xl font-bold font-inter">VISA</span>
-            <span className="text-2xl font-bold font-inter">PayPal</span>
-            <span className="text-2xl font-bold font-inter">Apple Pay</span>
-            <span className="text-2xl font-bold font-inter">Google Pay</span>
+          <div className="flex items-center justify-center space-x-8">
+            <img src="/visa.webp" alt="VISA" className="h-8" />
+            <img src="/paypal.webp" alt="PayPal" className="h-8" />
+            <img src="/applepay.webp" alt="Apple Pay" className="h-8" />
+            <img src="/gpay.webp" alt="Google Pay" className="h-8" />
           </div>
         </div>
       </div>

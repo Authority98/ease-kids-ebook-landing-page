@@ -7,6 +7,7 @@ import Reviews from './components/Reviews';
 import VideoSection from './components/VideoSection';
 import PurchaseSection from './components/PurchaseSection';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Author />
       <Reviews />
       <PurchaseSection />
+      <Footer />
     </div>
   );
 }
