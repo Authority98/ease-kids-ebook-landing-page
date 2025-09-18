@@ -35,6 +35,12 @@ const BookDetails = () => {
     }
   ];
 
+  const Page = React.forwardRef(({ image, alt }: { image: string; alt: string }, ref: React.Ref<HTMLDivElement>) => (
+    <div className="page rounded-2xl shadow-2xl bg-white" ref={ref}>
+      <img src={image} alt={alt} className="w-full h-full object-cover" />
+    </div>
+  ));
+
   return (
     <section id="details" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
       <img 
@@ -105,13 +111,7 @@ const BookDetails = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/8613313/pexels-photo-8613313.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                alt="Gehirn Illustration"
-                className="rounded-2xl shadow-2xl"
-              />
-            </div>
+            <img src="/book-cover.png" alt="Book Cover" className="w-full h-auto rounded-lg shadow-lg" />
           </div>
         </div>
       </div>

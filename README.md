@@ -89,6 +89,8 @@ vite.config.ts
 
 - Hidden header and footer components (can be re-enabled in `src/App.tsx`).
 - Moved background image from Hero section to Book Preview and Book Details sections.
+- Replaced the flipbook with brain illustrations in the "Was du entdecken wirst" section of `BookDetails.tsx` with a single `book-cover.png` image.
+- Reverted the page flip effect in the "Blättere durch das Buch" section of `BookPreview.tsx` back to an iframe embed code.
 
 ## Contributing
 

@@ -1,4 +1,7 @@
 import React from 'react';
+// Removed: import HTMLFlipBook from 'react-pageflip';
+
+// Removed: const Page = React.forwardRef(...);
 
 const BookPreview = () => {
   return (
@@ -26,12 +29,12 @@ const BookPreview = () => {
               scrolling="no" 
               className="fp-iframe rounded-lg shadow-2xl" 
               style={{
-                border: '1px solid lightgray', 
+                border: '0px', 
                 width: '100%', 
                 height: '400px'
               }}
               src="https://heyzine.com/flip-book/843f012ca4.html"
-            />
+            ></iframe>
           </div>
         </div>
       </div>
