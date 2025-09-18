@@ -111,7 +111,21 @@ const BookDetails = () => {
               </div>
             </div>
             
-            <img src="/book-cover.png" alt="Book Cover" className="w-full h-auto rounded-lg shadow-lg" />
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-black/10 rounded-3xl transform rotate-6 scale-105"></div>
+                <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img 
+                    src="/book-cover.png" 
+                    alt="Das Menschliche Gehirn Buchcover"
+                    className="w-80 h-100 object-cover rounded-2xl shadow-lg"
+                  />
+                  <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+                    Bestseller!
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

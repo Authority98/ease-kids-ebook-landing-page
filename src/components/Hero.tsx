@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Star, Download, Play } from 'lucide-react';
 import VideoPopup from './VideoPopup';
+import PaymentModal from './PaymentModal';
 
 const Hero = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
   const handleOpenVideo = () => {
     setIsVideoOpen(true);
@@ -11,6 +13,14 @@ const Hero = () => {
 
   const handleCloseVideo = () => {
     setIsVideoOpen(false);
+  };
+
+  const handleOpenPayment = () => {
+    setIsPaymentOpen(true);
+  };
+
+  const handleClosePayment = () => {
+    setIsPaymentOpen(false);
   };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
@@ -45,7 +55,11 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-inter" style={{ backgroundColor: '#77A060' }}>
+              <button 
+                className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-inter" 
+                style={{ backgroundColor: '#77A060' }}
+                onClick={handleOpenPayment}
+              >
                 <Download className="inline w-5 h-5 mr-2" />
                 Jetzt kaufen
               </button>
@@ -96,6 +110,11 @@ const Hero = () => {
         videoUrl="/file notion soff4ba56e7e-57ed-400d-9030-c03c0514f7e68d6ddfa9-43f.mp4"
         isOpen={isVideoOpen}
         onClose={handleCloseVideo}
+      />
+
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={handleClosePayment}
       />
     </section>
   );
