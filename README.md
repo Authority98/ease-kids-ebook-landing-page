@@ -120,6 +120,12 @@ vite.config.ts
   - Better integration of timer across all purchase touchpoints
   - More cohesive design language throughout the application
 
+### Version 4.1 - Refined Top Bar Design (January 2025)
+
+- **Cleaner Timer**: Removed dot and border from timer section for minimal design
+- **Slimmer Profile**: Reduced vertical padding for more elegant appearance
+- **Simplified Elements**: Streamlined visual elements while maintaining functionality
+
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 
   - Removed billing address requirement for streamlined checkout

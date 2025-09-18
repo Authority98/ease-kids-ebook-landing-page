@@ -60,13 +60,12 @@ const TopBar: React.FC<TopBarProps> = ({
             </div>
             
             {/* Center - Timer with enhanced design */}
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-1 border border-white/20">
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-1">
               <div className="flex items-center space-x-2">
-                <div className="w-1.5 h-1.5 bg-white rounded-full" />
                 <span className="text-xs font-medium text-white/90">Endet in</span>
               </div>
               <div className="flex space-x-1">
-                <div className="text-sm font-mono font-bold text-white bg-white/20 px-2 py-1 rounded-lg border border-white/30">
+                <div className="text-sm font-mono font-bold text-white bg-white/20 px-2 py-1 rounded-lg">
                   {formatTime(timeLeft)}
                 </div>
               </div>
