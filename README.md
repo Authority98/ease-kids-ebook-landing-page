@@ -85,6 +85,11 @@ tsconfig.node.json
 vite.config.ts
 ```
 
+## Recent Updates
+
+- Hidden header and footer components (can be re-enabled in `src/App.tsx`).
+- Moved background image from Hero section to Book Preview and Book Details sections.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.

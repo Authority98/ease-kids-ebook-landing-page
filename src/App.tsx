@@ -12,14 +12,14 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F9F1E2' }}>
-      <Navigation />
+      {/* <Navigation /> */}
       <Hero />
       <BookPreview />
       <BookDetails />
       <Author />
       <Reviews />
       <PurchaseSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

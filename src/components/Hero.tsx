@@ -19,11 +19,11 @@ const Hero = () => {
         alt="Decoration 1" 
         className="absolute bottom-0 right-0 w-1/6 h-auto z-0 opacity-100"
       />
-      <img 
+      {/* <img 
         src="/d2.png" 
         alt="Decoration 2" 
         className="absolute top-4 left-4 w-1/4 h-auto z-0 opacity-100"
-      />
+      /> */}
       
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

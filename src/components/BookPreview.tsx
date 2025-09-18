@@ -2,7 +2,12 @@ import React from 'react';
 
 const BookPreview = () => {
   return (
-    <section id="preview" className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
+    <section id="preview" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
+      <img 
+        src="/d2.png" 
+        alt="Decoration 2" 
+        className="absolute top-4 left-4 w-1/4 h-auto z-0 opacity-100"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">

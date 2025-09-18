@@ -36,7 +36,12 @@ const BookDetails = () => {
   ];
 
   return (
-    <section id="details" className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
+    <section id="details" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
+      <img 
+        src="/d1.png" 
+        alt="Decoration 1" 
+        className="absolute top-0 right-0 w-1/6 h-auto z-0 opacity-100"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ 
   backgroundImage: "url('/d3.png')",
   backgroundSize: 'cover',
