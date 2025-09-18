@@ -6,9 +6,10 @@ interface VideoPopupProps {
   videoUrl: string;
   onClose: () => void;
   isOpen: boolean;
+  timeLeft?: number;
 }
 
-const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen }) => {
+const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, timeLeft }) => {
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
   const handleOpenPayment = () => {
@@ -121,6 +122,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen }) =>
       <PaymentModal
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
+        timeLeft={timeLeft}
       />
     </div>
   );

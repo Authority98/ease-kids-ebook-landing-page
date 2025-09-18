@@ -74,11 +74,15 @@ src/
 │   ├── Author.tsx
 │   ├── BookDetails.tsx
 │   ├── BookPreview.tsx
+│   ├── CustomerNotification.tsx
+│   ├── Footer.tsx
 │   ├── Hero.tsx
 │   ├── Navigation.tsx
 │   ├── PaymentModal.tsx
 │   ├── PurchaseSection.tsx
 │   ├── Reviews.tsx
+│   ├── ThankYouPopup.tsx
+│   ├── TopBar.tsx
 │   └── VideoPopup.tsx
 ├── index.css
 ├── main.tsx
@@ -91,6 +95,30 @@ vite.config.ts
 ```
 
 ## Recent Updates
+
+### Version 4.0 - Enhanced Timer & Pricing Features (January 2025)
+- **Updated Timer System**:
+  - Reduced countdown timer from 10 minutes to 5 minutes for increased urgency
+  - Implemented shared time state management across all components
+  - Enhanced timer synchronization between top bar and payment modal
+  - Added time display to payment modal for better user awareness
+
+- **Improved Pricing Display**:
+  - Added discounted pricing to payment modal (€14.99 instead of €19.99)
+  - Implemented "25% SPAREN" badge with visual indicators
+  - Enhanced price presentation with savings information
+  - Updated submit button to show discounted price with percentage badge
+
+- **Refined Top Bar Design**:
+  - Made top bar slimmer with reduced vertical padding
+  - Added single fire emoji (🔥) for subtle urgency indication
+  - Removed continuous blinking animations for cleaner appearance
+  - Maintained professional aesthetic while keeping promotional elements
+
+- **Enhanced User Experience**:
+  - Improved visual hierarchy and spacing
+  - Better integration of timer across all purchase touchpoints
+  - More cohesive design language throughout the application
 
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 

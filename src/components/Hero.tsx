@@ -3,7 +3,11 @@ import { Star, Download, Play, Brain, BookOpen, Lightbulb, GraduationCap } from 
 import VideoPopup from './VideoPopup';
 import PaymentModal from './PaymentModal';
 
-const Hero = () => {
+interface HeroProps {
+  timeLeft?: number;
+}
+
+const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
@@ -136,11 +140,13 @@ const Hero = () => {
         videoUrl="/file notion soff4ba56e7e-57ed-400d-9030-c03c0514f7e68d6ddfa9-43f.mp4"
         isOpen={isVideoOpen}
         onClose={handleCloseVideo}
+        timeLeft={timeLeft}
       />
 
       <PaymentModal
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
+        timeLeft={timeLeft}
       />
     </section>
   );

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Download, BookOpen, Headphones, Tablet, Check, Gift, ShoppingCart, Star, Heart, GraduationCap } from 'lucide-react';
 import PaymentModal from './PaymentModal';
 
-const PurchaseSection = () => {
+interface PurchaseSectionProps {
+  timeLeft?: number;
+}
+
+const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
   const handleOpenPayment = () => {
@@ -213,6 +217,7 @@ const PurchaseSection = () => {
       <PaymentModal
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
+        timeLeft={timeLeft}
       />
     </section>
   );

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Star, Quote, Heart, ThumbsUp, Users, Award, GraduationCap } from 'lucide-react';
 import PaymentModal from './PaymentModal';
 
-const Reviews = () => {
+interface ReviewsProps {
+  timeLeft?: number;
+}
+
+const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
   const handleOpenPayment = () => {
@@ -162,6 +166,7 @@ const Reviews = () => {
       <PaymentModal
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
+        timeLeft={timeLeft}
       />
     </section>
   );

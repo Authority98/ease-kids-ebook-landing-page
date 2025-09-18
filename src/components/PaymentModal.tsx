@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { X, CreditCard, User, Download, CheckCircle, Lock, Star, GraduationCap } from 'lucide-react';
+import ThankYouPopup from './ThankYouPopup';
 
 interface PaymentModalProps {
   isOpen: boolean;
   onClose: () => void;
+  timeLeft?: number; // Optional time left in seconds
 }
 
 interface FormData {
@@ -15,9 +17,10 @@ interface FormData {
   cvv: string;
 }
 
-const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
+const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }) => {
   const [currentStep, setCurrentStep] = useState<'payment' | 'success'>('payment');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -61,6 +64,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
       });
     }
   }, [isOpen]);
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -113,10 +122,11 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsProcessing(false);
-    // Use setTimeout to ensure DOM is ready for step transition
+    // Close payment modal and show thank you popup
+    onClose();
     setTimeout(() => {
-      setCurrentStep('success');
-    }, 0);
+      setShowThankYou(true);
+    }, 300);
   };
 
   const handleDownload = () => {
@@ -184,7 +194,14 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
-              <p className="text-base text-gray-700 font-inter">Das Menschliche Gehirn</p>
+              <p className="text-base text-gray-700 font-inter">Das Menschliche Gebirn</p>
+              
+              {timeLeft && timeLeft > 0 && (
+                <div className="flex items-center justify-center space-x-2 mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                  <span className="text-sm font-medium text-red-700">Angebot endet in {formatTime(timeLeft)}</span>
+                </div>
+              )}
               
               <div className="flex items-center justify-center space-x-1 mt-2">
                 {[...Array(5)].map((_, i) => (
@@ -287,12 +304,26 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
               </div>
 
               {/* Price Display */}
-              <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border-2 border-[#77A060]/20">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 backdrop-blur-sm rounded-xl p-4 border-2 border-orange-300 shadow-lg">
                 <div className="flex items-center justify-between">
-                  <span className="text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
-                  <span className="text-xl font-bold text-[#77A060] font-lora">€19.99</span>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
+                    <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center space-x-1">
+                      <span>🔥</span>
+                      <span>25% SPAREN</span>
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm text-gray-500 line-through font-inter">€19.99</span>
+                      <span className="text-2xl font-bold text-red-600 font-lora">€14.99</span>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-xs text-gray-600 mt-1 font-inter">✨ Sofortiger Download nach dem Kauf</p>
+                <div className="flex items-center justify-between mt-2">
+                  <p className="text-xs text-gray-600 font-inter">✨ Sofortiger Download nach dem Kauf</p>
+                  <span className="text-xs text-red-600 font-bold font-inter">Du sparst €5.00!</span>
+                </div>
               </div>
 
               {/* Submit Button */}
@@ -307,9 +338,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
                     Zahlung wird verarbeitet...
                   </div>
                 ) : (
-                  <div className="flex items-center justify-center">
-                    <Lock className="w-4 h-4 mr-2" />
-                    Sicher bezahlen - €19.99
+                  <div className="flex items-center justify-center space-x-2">
+                    <Lock className="w-4 h-4" />
+                    <span>Jetzt nur €14.99 sichern</span>
+                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full">-25%</span>
                   </div>
                 )}
               </button>
@@ -380,6 +412,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
           </div>
         )}
       </div>
+      
+      {/* Thank You Popup */}
+      {showThankYou && (
+        <ThankYouPopup 
+          onClose={() => setShowThankYou(false)}
+          customerName={`${formData.firstName} ${formData.lastName}`}
+          customerEmail={formData.email}
+        />
+      )}
     </div>
   );
 };
