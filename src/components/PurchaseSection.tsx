@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, BookOpen, Headphones, Tablet, Check, Gift } from 'lucide-react';
+import { Download, BookOpen, Headphones, Tablet, Check, Gift, ShoppingCart, Star, Heart, GraduationCap } from 'lucide-react';
 import PaymentModal from './PaymentModal';
 
 const PurchaseSection = () => {
@@ -56,6 +56,29 @@ const PurchaseSection = () => {
         className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
         style={{ objectFit: 'repeat' }}
       />
+      
+      {/* Creative Purchase & Shopping Icons */}
+      <div className="absolute top-16 right-12 opacity-20 animate-pulse">
+        <ShoppingCart className="w-20 h-20 text-[#77A060]" />
+      </div>
+      <div className="absolute bottom-20 left-16 opacity-15 animate-bounce">
+        <BookOpen className="w-18 h-18 text-[#77A060]" />
+      </div>
+      <div className="absolute top-1/4 left-8 opacity-25 transform rotate-12">
+        <Star className="w-16 h-16 text-yellow-500" />
+      </div>
+      <div className="absolute bottom-1/3 right-8 opacity-20 animate-pulse">
+        <GraduationCap className="w-14 h-14 text-[#77A060]" />
+      </div>
+      <div className="absolute top-2/3 right-1/4 opacity-15 transform -rotate-12">
+        <Heart className="w-12 h-12 text-red-400" />
+      </div>
+      <div className="absolute bottom-12 left-1/3 opacity-20 transform rotate-45">
+        <BookOpen className="w-10 h-10 text-[#77A060]" />
+      </div>
+      <div className="absolute top-12 left-1/4 opacity-15 animate-bounce">
+        <Gift className="w-8 h-8 text-yellow-500" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">
@@ -65,7 +88,7 @@ const PurchaseSection = () => {
             Wähle dein bevorzugtes Format und starte deine Reise ins Gehirn
           </p>
           
-          <div className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full font-bold shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+          <div className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full font-bold shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-200">
             <Gift className="w-5 h-5" />
             <span>Begrenzte Zeit: 25% Rabatt auf alle Formate</span>
           </div>
@@ -83,7 +106,7 @@ const PurchaseSection = () => {
               style={{ borderColor: format.popular ? '#77A060' : '#d1d5db' }}
             >
               {format.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700">
                   Beliebteste Wahl
                 </div>
               )}
@@ -111,22 +134,11 @@ const PurchaseSection = () => {
                 <button 
                   className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter ${
                     format.popular
-                      ? 'text-white transform hover:scale-105 shadow-lg'
-                      : 'border-2 text-black hover:text-white'
+                      ? 'text-white transform hover:scale-105 shadow-lg bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800'
+                      : 'border-2 text-black hover:text-white bg-gradient-to-r from-transparent to-transparent hover:from-[#77A060] hover:to-green-700'
                   }`}
                   style={{ 
-                    backgroundColor: format.popular ? '#77A060' : 'transparent',
                     borderColor: format.popular ? 'transparent' : '#77A060'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!format.popular) {
-                      e.currentTarget.style.backgroundColor = '#77A060';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!format.popular) {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                    }
                   }}
                   onClick={handleOpenPayment}
                 >

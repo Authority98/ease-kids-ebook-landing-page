@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Globe, BookOpen, Award, Users, Zap } from 'lucide-react';
+import { Calendar, Globe, BookOpen, Award, Users, Zap, Lightbulb, Heart, Star, GraduationCap } from 'lucide-react';
 
 const BookDetails = () => {
   const features = [
@@ -48,6 +48,26 @@ const BookDetails = () => {
         alt="Decoration 1" 
         className="absolute top-0 right-0 w-1/6 h-auto z-0 opacity-100"
       />
+      
+      {/* Creative Brain & Learning Icons */}
+      <div className="absolute top-16 left-12 opacity-20 animate-pulse">
+        <BookOpen className="w-20 h-20 text-[#77A060]" />
+      </div>
+      <div className="absolute top-32 right-16 opacity-15 animate-bounce">
+        <Lightbulb className="w-14 h-14 text-yellow-500" />
+      </div>
+      <div className="absolute bottom-24 left-8 opacity-25 transform rotate-45">
+        <Star className="w-12 h-12 text-[#77A060]" />
+      </div>
+      <div className="absolute top-1/2 left-4 opacity-20 transform -rotate-12">
+        <Heart className="w-10 h-10 text-red-400" />
+      </div>
+      <div className="absolute bottom-16 right-12 opacity-15 animate-pulse">
+        <GraduationCap className="w-16 h-16 text-[#77A060]" />
+      </div>
+      <div className="absolute top-2/3 right-4 opacity-20 transform rotate-12">
+        <BookOpen className="w-8 h-8 text-[#77A060]" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ 
   backgroundImage: "url('/d3.png')",
   backgroundSize: 'cover',
@@ -118,9 +138,9 @@ const BookDetails = () => {
                   <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                    className="w-80 h-100 object-cover rounded-2xl shadow-lg"
+                    className="w-80 h-100 object-cover rounded-2xl shadow-2xl"
                   />
-                  <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+                  <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700">
                     Bestseller!
                   </div>
                 </div>

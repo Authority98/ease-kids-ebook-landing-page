@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Linkedin, Globe, BookOpen } from 'lucide-react';
+import { Twitter, Linkedin, Globe, BookOpen, Lightbulb, Award, Heart, GraduationCap } from 'lucide-react';
 
 const Author = () => {
   return (
@@ -14,6 +14,26 @@ const Author = () => {
         alt="Decoration 2" 
         className="absolute top-4 left-4 w-1/4 h-auto z-0 opacity-100"
       />
+      
+      {/* Creative Author & Science Icons */}
+      <div className="absolute top-16 right-12 opacity-20 animate-pulse">
+        <GraduationCap className="w-20 h-20 text-[#77A060]" />
+      </div>
+      <div className="absolute bottom-20 left-16 opacity-15 animate-bounce">
+        <Award className="w-16 h-16 text-yellow-500" />
+      </div>
+      <div className="absolute top-1/4 left-8 opacity-25 transform rotate-12">
+        <Lightbulb className="w-14 h-14 text-yellow-500" />
+      </div>
+      <div className="absolute bottom-1/3 right-8 opacity-20 animate-pulse">
+        <GraduationCap className="w-12 h-12 text-[#77A060]" />
+      </div>
+      <div className="absolute top-2/3 right-1/4 opacity-15 transform -rotate-12">
+        <Heart className="w-10 h-10 text-red-400" />
+      </div>
+      <div className="absolute bottom-12 left-1/3 opacity-20 transform rotate-45">
+        <BookOpen className="w-8 h-8 text-[#77A060]" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">

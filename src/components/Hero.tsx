@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Download, Play } from 'lucide-react';
+import { Star, Download, Play, Brain, BookOpen, Lightbulb, GraduationCap } from 'lucide-react';
 import VideoPopup from './VideoPopup';
 import PaymentModal from './PaymentModal';
 
@@ -29,6 +29,23 @@ const Hero = () => {
         alt="Decoration 1" 
         className="absolute bottom-0 right-0 w-1/6 h-auto z-0 opacity-100"
       />
+      
+      {/* Creative Brain & Book Icons */}
+      <div className="absolute top-8 left-8 opacity-20 animate-pulse">
+        <Brain className="w-16 h-16 text-[#77A060]" />
+      </div>
+      <div className="absolute top-20 right-20 opacity-15 animate-bounce">
+        <GraduationCap className="w-12 h-12 text-[#77A060]" />
+      </div>
+      <div className="absolute bottom-32 left-16 opacity-25 transform rotate-12">
+        <BookOpen className="w-14 h-14 text-[#77A060]" />
+      </div>
+      <div className="absolute top-1/3 right-8 opacity-20 animate-pulse">
+        <Lightbulb className="w-10 h-10 text-yellow-500" />
+      </div>
+      <div className="absolute bottom-20 right-1/4 opacity-15 transform -rotate-12">
+        <Brain className="w-8 h-8 text-[#77A060]" />
+      </div>
       {/* <img 
         src="/d2.png" 
         alt="Decoration 2" 
@@ -56,8 +73,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
-                className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-inter" 
-                style={{ backgroundColor: '#77A060' }}
+                className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter" 
                 onClick={handleOpenPayment}
               >
                 <Download className="inline w-5 h-5 mr-2" />
@@ -95,9 +111,9 @@ const Hero = () => {
                 <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                  className="w-80 h-100 object-cover rounded-2xl shadow-lg"
+                  className="w-80 h-100 object-cover rounded-2xl shadow-2xl"
                 />
-                <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
+                <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700">
                   Bestseller!
                 </div>
               </div>

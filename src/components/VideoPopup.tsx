@@ -45,14 +45,13 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen }) =>
       className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-300"
       onClick={onClose}
     >
-      <div 
-        className="relative w-full max-w-5xl bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
+      <div className="relative w-full max-w-5xl bg-gradient-to-br from-[#77A060]/5 to-green-50 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white/90 backdrop-blur-sm">
+        <div className="flex items-center justify-between p-6 border-b border-[#77A060]/20 bg-white/90 backdrop-blur-sm">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center">
               <Play className="w-5 h-5 text-white" />
             </div>
             <div>
@@ -87,7 +86,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen }) =>
         </div>
 
         {/* Footer */}
-        <div className="p-6 bg-gradient-to-r from-gray-50 to-white border-t border-gray-200">
+        <div className="p-6 bg-gradient-to-r from-[#77A060]/5 to-green-50 border-t border-[#77A060]/20">
           <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
             <div className="text-center sm:text-left">
               <p className="text-gray-700 font-inter">
@@ -103,13 +102,13 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen }) =>
             
             <div className="flex space-x-3">
               <button 
-                className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-full font-medium transition-colors duration-200 font-inter"
+                className="px-6 py-2 bg-[#77A060]/10 hover:bg-[#77A060]/20 text-[#77A060] border border-[#77A060]/30 rounded-full font-medium transition-colors duration-200 font-inter"
                 onClick={onClose}
               >
                 Schließen
               </button>
               <button 
-                className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-bold transition-all duration-200 transform hover:scale-105 shadow-lg font-inter"
+                className="px-6 py-2 bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 text-white rounded-full font-bold transition-all duration-200 transform hover:scale-105 shadow-lg font-inter"
                 onClick={handleOpenPayment}
               >
                 Jetzt kaufen

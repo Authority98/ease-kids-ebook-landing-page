@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, Heart, ThumbsUp, Users, Award, GraduationCap } from 'lucide-react';
 import PaymentModal from './PaymentModal';
 
 const Reviews = () => {
@@ -59,7 +59,29 @@ const Reviews = () => {
   ];
 
   return (
-    <section id="reviews" className="py-20" style={{ backgroundColor: '#F9F1E2' }}>
+    <section id="reviews" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
+      {/* Creative Reviews & Social Proof Icons */}
+      <div className="absolute top-16 right-12 opacity-20 animate-pulse">
+        <ThumbsUp className="w-18 h-18 text-[#77A060]" />
+      </div>
+      <div className="absolute bottom-20 left-16 opacity-15 animate-bounce">
+        <Users className="w-16 h-16 text-[#77A060]" />
+      </div>
+      <div className="absolute top-1/4 left-8 opacity-25 transform rotate-12">
+        <Award className="w-14 h-14 text-yellow-500" />
+      </div>
+      <div className="absolute bottom-1/3 right-8 opacity-20 animate-pulse">
+        <Users className="w-12 h-12 text-[#77A060]" />
+      </div>
+      <div className="absolute top-2/3 right-1/4 opacity-15 transform -rotate-12">
+        <Heart className="w-10 h-10 text-red-400" />
+      </div>
+      <div className="absolute bottom-12 left-1/3 opacity-20 transform rotate-45">
+        <GraduationCap className="w-8 h-8 text-[#77A060]" />
+      </div>
+      <div className="absolute top-12 left-1/4 opacity-15 animate-bounce">
+        <Star className="w-6 h-6 text-yellow-500" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">
@@ -67,12 +89,20 @@ const Reviews = () => {
           </h2>
           <div className="flex items-center justify-center space-x-2 mb-4">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-8 h-8 text-yellow-300 fill-current" />
+              <Star key={i} className="w-8 h-8 bg-gradient-to-r from-[#77A060] to-green-600 bg-clip-text text-transparent fill-current" style={{fill: 'url(#starGradient)'}} />
             ))}
             <span className="text-2xl font-bold text-black ml-4 font-lora">4.9/5</span>
           </div>
+          <svg width="0" height="0">
+            <defs>
+              <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#77A060" />
+                <stop offset="100%" stopColor="#16a34a" />
+              </linearGradient>
+            </defs>
+          </svg>
           <p className="text-xl text-black font-inter">
-            Basierend auf 1,247 Bewertungen von Eltern, Lehrern und begeisterten Kindern
+            Authentische Bewertungen von Eltern, Lehrern und begeisterten Kindern
           </p>
         </div>
 
@@ -97,7 +127,7 @@ const Reviews = () => {
               
               <div className="flex items-center space-x-1 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-300 fill-current" />
+                  <Star key={i} className="w-4 h-4 fill-current" style={{fill: 'url(#starGradient)'}} />
                 ))}
               </div>
               
@@ -120,8 +150,7 @@ const Reviews = () => {
               "Das Menschliche Gehirn" ist das perfekte Buch für neugierige Kinder, die verstehen wollen, wie ihr Gehirn funktioniert.
             </p>
             <button 
-              className="text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg font-inter" 
-              style={{ backgroundColor: '#77A060' }}
+              className="text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter" 
               onClick={handleOpenPayment}
             >
               Jetzt dein Exemplar sichern

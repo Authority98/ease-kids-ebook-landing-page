@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CreditCard, User, Download, CheckCircle, Lock, Star, Brain, Sparkles } from 'lucide-react';
+import { X, CreditCard, User, Download, CheckCircle, Lock, Star, GraduationCap } from 'lucide-react';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -107,13 +107,17 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleDownload = () => {
-    // Simulate download
+    // Create a proper PDF download link
     const link = document.createElement('a');
-    link.href = '/book-cover.png'; // Using book cover as placeholder
+    link.href = '/book-cover.png'; // This would be replaced with actual PDF URL
     link.download = 'Das-Menschliche-Gehirn-Ebook.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Show success message
+    alert('Download gestartet! Das E-Book wird heruntergeladen...');
   };
 
   if (!isOpen) return null;
@@ -130,10 +134,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
       >
         {/* Decorative Elements */}
         <div className="absolute top-4 right-4 opacity-20">
-          <Brain className="w-16 h-16 text-[#77A060]" />
+          <Star className="w-16 h-16 text-[#77A060]" />
         </div>
         <div className="absolute bottom-4 left-4 opacity-10">
-          <Sparkles className="w-12 h-12 text-[#77A060]" />
+          <GraduationCap className="w-12 h-12 text-[#77A060]" />
         </div>
 
         {currentStep === 'payment' ? (
@@ -309,7 +313,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
                     alt="Das Menschliche Gehirn" 
                     className="w-24 h-32 object-cover rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                   />
-                  <div className="absolute -top-2 -right-2 bg-[#77A060] text-white font-bold px-2 py-1 rounded-full text-xs transform rotate-12 shadow-lg font-inter">
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#77A060] to-green-700 text-white font-bold px-2 py-1 rounded-full text-xs transform rotate-12 shadow-lg font-inter">
                     Bestseller!
                   </div>
                 </div>
@@ -335,10 +339,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose }) => {
               </button>
             </div>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border-2 border-yellow-200">
-              <p className="text-xs text-yellow-800 font-inter flex items-center justify-center">
-                <Sparkles className="w-3 h-3 mr-1" />
-                Eine Bestätigungs-E-Mail wurde an {formData.email} gesendet!
+            <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-[#77A060]/10 rounded-xl border-2 border-[#77A060]/30">
+              <p className="text-sm text-[#77A060] font-inter flex items-center justify-center font-semibold">
+                <CheckCircle className="w-4 h-4 mr-2" />
+                Zahlung erfolgreich! Eine Bestätigungs-E-Mail wurde an {formData.email} gesendet.
+              </p>
+              <p className="text-xs text-gray-600 font-inter text-center mt-2">
+                Du erhältst auch eine Rechnung und Downloadlinks per E-Mail.
               </p>
             </div>
           </div>
