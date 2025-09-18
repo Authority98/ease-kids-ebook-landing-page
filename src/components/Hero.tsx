@@ -56,8 +56,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-black/10 rounded-3xl transform rotate-6 scale-105"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="https://images.pexels.com/photos/8613313/pexels-photo-8613313.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Das Menschliche Gehirn Buchcover"
+                    src="/book-cover.png" 
+                    alt="Das Menschliche Gehirn Buchcover"
                   className="w-72 h-96 object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 text-white font-bold px-4 py-2 rounded-full transform rotate-12 shadow-lg font-inter" style={{ backgroundColor: '#77A060' }}>
