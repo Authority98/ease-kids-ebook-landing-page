@@ -401,10 +401,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
       {/* Thank You Popup */}
       {showThankYou && (
         <ThankYouPopup 
+          isOpen={showThankYou}
           onClose={() => setShowThankYou(false)}
-          customerName={`${formData.firstName} ${formData.lastName}`} isOpen={false} onDownload={function (): void {
-            throw new Error('Function not implemented.');
-          } }          // Remove customerEmail prop since it's not defined in ThankYouPopupProps
+          onDownload={handleDownload}
+          customerName={formData.firstName}
         />
       )}
     </div>
