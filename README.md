@@ -177,8 +177,9 @@ vite.config.ts
 - **Enhanced Payment Flow**:
   - PaymentModal now triggers `onPaymentSuccess` callback with customer name and email
   - Parent components manage ThankYouPopup visibility independently
-  - Maintained seamless user experience with proper state synchronization
-  - Fixed component unmounting issues that prevented popup display
+  - **Removed the "Fantastisch!" success screen - now directly shows ThankYouPopup**
+  - ThankYouPopup now appears immediately after payment with download functionality
+  - Streamlined user experience by eliminating duplicate success messages
 
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 
