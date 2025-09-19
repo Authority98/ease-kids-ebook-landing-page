@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, Download, Play, Brain, BookOpen, Lightbulb, GraduationCap } from 'lucide-react';
 import VideoPopup from './VideoPopup';
 import PaymentModal from './PaymentModal';
+import ThankYouPopup from './ThankYouPopup';
 
 interface HeroProps {
   timeLeft?: number;
@@ -10,6 +11,9 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
 
   const handleOpenVideo = () => {
     setIsVideoOpen(true);
@@ -25,6 +29,22 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
 
   const handleClosePayment = () => {
     setIsPaymentOpen(false);
+  };
+
+  const handlePaymentSuccess = (name: string, email: string) => {
+    setCustomerName(name);
+    setCustomerEmail(email);
+    setShowThankYou(true);
+  };
+
+  const handleDownload = () => {
+    // Create download link
+    const link = document.createElement('a');
+    link.href = '/ease-kids-ebook.pdf';
+    link.download = 'Das-Menschliche-Gehirn-E-Book.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#F9F1E2' }}>
@@ -147,6 +167,14 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
         timeLeft={timeLeft}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
+      
+      <ThankYouPopup 
+        isOpen={showThankYou}
+        onClose={() => setShowThankYou(false)}
+        onDownload={handleDownload}
+        customerName={customerName}
       />
     </section>
   );

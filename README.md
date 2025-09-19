@@ -165,13 +165,20 @@ vite.config.ts
   - Kept left alignment on larger screens for desktop layout
   - Improved visual balance on mobile view
 
-### Version 4.5 - Payment Modal Bug Fix (January 2025)
+### Version 4.5 - ThankYouPopup Architecture Fix (January 2025)
 
-- **Thank You Popup Fix**:
-  - Fixed ThankYouPopup not showing after successful payment form submission
-  - Corrected component props structure (removed invalid props, added proper onDownload handler)
-  - Fixed customerName prop to use only firstName (matching simplified form structure)
-  - Ensured proper modal state management for seamless user experience
+- **ThankYouPopup State Management**:
+  - Fixed ThankYouPopup not appearing after successful payment submission
+  - Moved popup state management from PaymentModal to parent components (Hero, PurchaseSection, Reviews)
+  - Added `onPaymentSuccess` callback prop to PaymentModal for parent-level state management
+  - Removed internal `showThankYou` state from PaymentModal to prevent unmounting issues
+  - Implemented consistent ThankYouPopup handling across all payment entry points
+
+- **Enhanced Payment Flow**:
+  - PaymentModal now triggers `onPaymentSuccess` callback with customer name and email
+  - Parent components manage ThankYouPopup visibility independently
+  - Maintained seamless user experience with proper state synchronization
+  - Fixed component unmounting issues that prevented popup display
 
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 

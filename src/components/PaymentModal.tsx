@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { X, CreditCard, User, Download, CheckCircle, Lock, Star, GraduationCap } from 'lucide-react';
-import ThankYouPopup from './ThankYouPopup';
 
 interface PaymentModalProps {
   isOpen: boolean;
   onClose: () => void;
   timeLeft?: number; // Optional time left in seconds
+  onPaymentSuccess?: (customerName: string, customerEmail: string) => void;
 }
 
 interface FormData {
@@ -16,10 +16,9 @@ interface FormData {
   cvv: string;
 }
 
-const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }) => {
+const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, onPaymentSuccess }) => {
   const [currentStep, setCurrentStep] = useState<'payment' | 'success'>('payment');
   const [isProcessing, setIsProcessing] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     email: '',
@@ -119,11 +118,20 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsProcessing(false);
-    // Close payment modal and show thank you popup
-    onClose();
+    
+    // Show success screen first, then trigger success callback
+    setCurrentStep('success');
+    
+    // After showing success screen, close modal and call success callback
     setTimeout(() => {
-      setShowThankYou(true);
-    }, 300);
+      onClose();
+      // Call the success callback to show thank you popup
+      if (onPaymentSuccess) {
+        setTimeout(() => {
+          onPaymentSuccess(formData.firstName, formData.email);
+        }, 300);
+      }
+    }, 3000); // Show success screen for 3 seconds before closing
   };
 
   const handleDownload = () => {
@@ -397,16 +405,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
           </div>
         )}
       </div>
-      
-      {/* Thank You Popup */}
-      {showThankYou && (
-        <ThankYouPopup 
-          isOpen={showThankYou}
-          onClose={() => setShowThankYou(false)}
-          onDownload={handleDownload}
-          customerName={formData.firstName}
-        />
-      )}
     </div>
   );
 };

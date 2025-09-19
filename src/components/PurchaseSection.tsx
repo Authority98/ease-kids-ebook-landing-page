@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Download, BookOpen, Headphones, Tablet, Check, Gift, ShoppingCart, Star, Heart, GraduationCap } from 'lucide-react';
 import PaymentModal from './PaymentModal';
+import ThankYouPopup from './ThankYouPopup';
 
 interface PurchaseSectionProps {
   timeLeft?: number;
@@ -8,6 +9,9 @@ interface PurchaseSectionProps {
 
 const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
 
   const handleOpenPayment = () => {
     setIsPaymentOpen(true);
@@ -15,6 +19,22 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
 
   const handleClosePayment = () => {
     setIsPaymentOpen(false);
+  };
+
+  const handlePaymentSuccess = (name: string, email: string) => {
+    setCustomerName(name);
+    setCustomerEmail(email);
+    setShowThankYou(true);
+  };
+
+  const handleDownload = () => {
+    // Create download link
+    const link = document.createElement('a');
+    link.href = '/ease-kids-ebook.pdf';
+    link.download = 'Das-Menschliche-Gehirn-E-Book.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const formats = [
@@ -218,6 +238,14 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
         isOpen={isPaymentOpen}
         onClose={handleClosePayment}
         timeLeft={timeLeft}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
+      
+      <ThankYouPopup 
+        isOpen={showThankYou}
+        onClose={() => setShowThankYou(false)}
+        onDownload={handleDownload}
+        customerName={customerName}
       />
     </section>
   );
