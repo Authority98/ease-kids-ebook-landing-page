@@ -126,11 +126,30 @@ vite.config.ts
 - **Slimmer Profile**: Reduced vertical padding for more elegant appearance
 - **Simplified Elements**: Streamlined visual elements while maintaining functionality
 
-## Version 4.2 - Mobile Design Improvements (January 2025)
+### Version 4.2 - Mobile Design Improvements (January 2025)
 
 - **Hero Rating Centering**: Rating element now centered on mobile devices only
 - **Top Bar Mobile Optimization**: Text stays in one line on mobile with responsive sizing
 - **Card Network Shadows**: Added shadow effects to payment method images for better visual depth
+
+### Version 4.3 - Payment Modal Mobile Optimization & Simplification (January 2025)
+
+- **Mobile Cut-off Fix**: Resolved payment modal being cut off on mobile devices
+  - Added vertical scrolling with `max-h-[95vh]` and `overflow-y-auto`
+  - Reduced mobile padding throughout modal (p-2 vs p-4)
+  - Optimized header, form fields, and buttons for mobile screens
+  - Reduced decorative element sizes on mobile devices
+
+- **Simplified Personal Information**: 
+  - Removed separate first name and last name fields
+  - Combined into single "Vollständiger Name" (Full Name) field
+  - Full name and email now appear side by side in responsive grid
+  - Streamlined checkout process with fewer required fields
+
+- **Enhanced Mobile UX**:
+  - Reduced input field padding for better mobile usability
+  - Optimized timer section and rating elements for small screens
+  - Maintained all payment functionality while improving mobile experience
 
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 

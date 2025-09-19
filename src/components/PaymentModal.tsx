@@ -10,7 +10,6 @@ interface PaymentModalProps {
 
 interface FormData {
   firstName: string;
-  lastName: string;
   email: string;
   cardNumber: string;
   expiryDate: string;
@@ -23,7 +22,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
   const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
-    lastName: '',
     email: '',
     cardNumber: '',
     expiryDate: '',
@@ -56,7 +54,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
       setIsProcessing(false);
       setFormData({
         firstName: '',
-        lastName: '',
         email: '',
         cardNumber: '',
         expiryDate: '',
@@ -108,7 +105,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
     e.preventDefault();
     
     // Basic validation check
-    const requiredFields = ['firstName', 'lastName', 'email', 'cardNumber', 'expiryDate', 'cvv'];
+    const requiredFields = ['firstName', 'email', 'cardNumber', 'expiryDate', 'cvv'];
     const isValid = requiredFields.every(field => formData[field as keyof FormData].trim() !== '');
     
     if (!isValid) {
@@ -161,58 +158,58 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
 
   return (
     <div 
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-300"
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4 animate-in fade-in duration-300"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg bg-gradient-to-br from-[#F9F1E2] to-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300"
+        className="relative w-full max-w-lg bg-gradient-to-br from-[#F9F1E2] to-white rounded-3xl shadow-2xl overflow-y-auto max-h-[95vh] animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
         style={{ backgroundColor: '#F9F1E2' }}
       >
         {/* Decorative Elements */}
-        <div className="absolute top-4 right-4 opacity-20">
-          <Star className="w-16 h-16 text-[#77A060]" />
+        <div className="absolute top-2 right-2 sm:top-4 sm:right-4 opacity-20">
+          <Star className="w-12 h-12 sm:w-16 sm:h-16 text-[#77A060]" />
         </div>
-        <div className="absolute bottom-4 left-4 opacity-10">
-          <GraduationCap className="w-12 h-12 text-[#77A060]" />
+        <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 opacity-10">
+          <GraduationCap className="w-8 h-8 sm:w-12 sm:h-12 text-[#77A060]" />
         </div>
 
         {currentStep === 'payment' ? (
           <div data-step="payment">
             {/* Header */}
-            <div className="relative p-6 text-center border-b border-[#77A060]/20">
+            <div className="relative p-4 sm:p-6 text-center border-b border-[#77A060]/20">
               <button
-                className="absolute top-3 right-3 group w-8 h-8 bg-white/80 hover:bg-red-100 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-lg"
+                className="absolute top-2 right-2 sm:top-3 sm:right-3 group w-8 h-8 bg-white/80 hover:bg-red-100 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-lg"
                 onClick={onClose}
                 aria-label="Zahlung schließen"
               >
                 <X className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors" />
               </button>
 
-              <div className="w-12 h-12 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
-                <CreditCard className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 shadow-lg">
+                <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
-              <p className="text-base text-gray-700 font-inter">Das Menschliche Gebirn</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
+              <p className="text-sm sm:text-base text-gray-700 font-inter">Das Menschliche Gebirn</p>
               
               {timeLeft && timeLeft > 0 && (
-                <div className="flex items-center justify-center space-x-2 mt-3 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                <div className="flex items-center justify-center space-x-2 mt-2 sm:mt-3 bg-red-50 border border-red-200 rounded-lg px-2 py-1 sm:px-3 sm:py-2">
                   <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium text-red-700">Angebot endet in {formatTime(timeLeft)}</span>
+                  <span className="text-xs sm:text-sm font-medium text-red-700">Angebot endet in {formatTime(timeLeft)}</span>
                 </div>
               )}
               
               <div className="flex items-center justify-center space-x-1 mt-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" />
                 ))}
                 <span className="text-xs text-gray-600 ml-2 font-inter">4.9/5 Bewertung</span>
               </div>
             </div>
 
             {/* Payment Form */}
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
+            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-3 sm:space-y-4">
               {/* Personal Information */}
               <div className="space-y-3">
                 <h4 className="text-lg font-semibold text-gray-900 flex items-center font-lora">
@@ -228,33 +225,21 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
-                      placeholder="Vorname"
+                      className="w-full px-3 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="Vollständiger Name"
                     />
                   </div>
                   <div>
                     <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
-                      placeholder="Nachname"
+                      className="w-full px-3 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      placeholder="E-Mail Adresse"
                     />
                   </div>
-                </div>
-                
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
-                    placeholder="E-Mail Adresse"
-                  />
                 </div>
               </div>
 
@@ -272,7 +257,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
                     value={formData.cardNumber}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                    className="w-full px-3 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
                     placeholder="1234 5678 9012 3456"
                   />
                 </div>
@@ -285,7 +270,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
                       value={formData.expiryDate}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      className="w-full px-3 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
                       placeholder="MM/YY"
                     />
                   </div>
@@ -296,7 +281,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
                       value={formData.cvv}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
+                      className="w-full px-3 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#77A060] focus:border-transparent transition-all font-inter bg-white/80 backdrop-blur-sm text-sm"
                       placeholder="CVV"
                     />
                   </div>
@@ -304,10 +289,10 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
               </div>
 
               {/* Price Display */}
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 backdrop-blur-sm rounded-xl p-4 border-2 border-orange-300 shadow-lg">
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border-2 border-orange-300 shadow-lg">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
+                    <span className="text-sm sm:text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
                     <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center space-x-1">
                       <span>🔥</span>
                       <span>25% SPAREN</span>
@@ -315,8 +300,8 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
                   </div>
                   <div className="text-right">
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm text-gray-500 line-through font-inter">€19.99</span>
-                      <span className="text-2xl font-bold text-red-600 font-lora">€14.99</span>
+                      <span className="text-xs sm:text-sm text-gray-500 line-through font-inter">€19.99</span>
+                      <span className="text-xl sm:text-2xl font-bold text-red-600 font-lora">€14.99</span>
                     </div>
                   </div>
                 </div>
@@ -330,7 +315,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="w-full bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-inter"
+                className="w-full bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 sm:py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none font-inter"
               >
                 {isProcessing ? (
                   <div className="flex items-center justify-center">
@@ -354,57 +339,57 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
         ) : (
           /* Success Screen */
           <div data-step="success">
-          <div className="p-6 text-center">
-            <div className="mb-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-100 to-[#77A060]/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
-                <CheckCircle className="w-12 h-12 text-[#77A060]" />
+          <div className="p-4 sm:p-6 text-center">
+            <div className="mb-4 sm:mb-6">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-100 to-[#77A060]/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 animate-bounce">
+                <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-[#77A060]" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2 font-lora">Fantastisch!</h3>
-              <p className="text-lg text-gray-700 font-inter">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2 font-lora">Fantastisch!</h3>
+              <p className="text-base sm:text-lg text-gray-700 font-inter">
                 Dein E-Book wartet auf dich! 🎉
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-white/80 to-[#77A060]/10 rounded-2xl p-6 mb-6 border-2 border-[#77A060]/20">
-              <div className="flex items-center justify-center mb-4">
+            <div className="bg-gradient-to-r from-white/80 to-[#77A060]/10 rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 border-2 border-[#77A060]/20">
+              <div className="flex items-center justify-center mb-3 sm:mb-4">
                 <div className="relative">
                   <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn" 
-                    className="w-24 h-32 object-cover rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                    className="w-20 h-28 sm:w-24 sm:h-32 object-cover rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
                   />
                   <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#77A060] to-green-700 text-white font-bold px-2 py-1 rounded-full text-xs transform rotate-12 shadow-lg font-inter">
                     Bestseller!
                   </div>
                 </div>
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-1 font-lora">Das Menschliche Gehirn</h4>
-              <p className="text-sm text-gray-600 font-inter">Bereit zum sofortigen Download!</p>
+              <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 font-lora">Das Menschliche Gehirn</h4>
+              <p className="text-xs sm:text-sm text-gray-600 font-inter">Bereit zum sofortigen Download!</p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <button
                 onClick={handleDownload}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center font-inter"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 sm:py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center justify-center font-inter"
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 E-Book jetzt herunterladen
               </button>
               
               <button
                 onClick={onClose}
-                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-colors duration-200 font-inter"
+                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 sm:py-3 px-6 rounded-xl transition-colors duration-200 font-inter"
               >
                 Fertig
               </button>
             </div>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-[#77A060]/10 rounded-xl border-2 border-[#77A060]/30">
-              <p className="text-sm text-[#77A060] font-inter flex items-center justify-center font-semibold">
-                <CheckCircle className="w-4 h-4 mr-2" />
+            <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-[#77A060]/10 rounded-xl border-2 border-[#77A060]/30">
+              <p className="text-xs sm:text-sm text-[#77A060] font-inter flex items-center justify-center font-semibold">
+                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Zahlung erfolgreich! Eine Bestätigungs-E-Mail wurde an {formData.email} gesendet.
               </p>
-              <p className="text-xs text-gray-600 font-inter text-center mt-2">
+              <p className="text-xs text-gray-600 font-inter text-center mt-1 sm:mt-2">
                 Du erhältst auch eine Rechnung und Downloadlinks per E-Mail.
               </p>
             </div>
@@ -417,8 +402,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft }
       {showThankYou && (
         <ThankYouPopup 
           onClose={() => setShowThankYou(false)}
-          customerName={`${formData.firstName} ${formData.lastName}`}
-          customerEmail={formData.email}
+          customerName={`${formData.firstName} ${formData.lastName}`} isOpen={false} onDownload={function (): void {
+            throw new Error('Function not implemented.');
+          } }          // Remove customerEmail prop since it's not defined in ThankYouPopupProps
         />
       )}
     </div>
