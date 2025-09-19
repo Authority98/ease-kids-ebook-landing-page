@@ -103,7 +103,7 @@ const Author = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center sm:justify-start">
               <a 
                 href="#" 
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"

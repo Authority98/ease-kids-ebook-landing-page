@@ -151,6 +151,20 @@ vite.config.ts
   - Optimized timer section and rating elements for small screens
   - Maintained all payment functionality while improving mobile experience
 
+### Version 4.4 - Top Bar & Author Section Mobile Fixes (January 2025)
+
+- **Top Bar Mobile Optimization**:
+  - Fixed content cut-off on mobile devices
+  - Reduced horizontal padding (px-2 vs px-4) and spacing (space-x-1 vs space-x-2)
+  - Hid longer text elements ("Begrenztes Angebot", "Endet in") on mobile screens
+  - Reduced font sizes and button sizes for better mobile fit
+  - Maintained all functionality while preventing overflow
+
+- **Author Section Social Icons**:
+  - Centered social media icons on mobile devices
+  - Kept left alignment on larger screens for desktop layout
+  - Improved visual balance on mobile view
+
 ### Version 3.0 - Enhanced Payment Experience & UI Improvements
 - **Simplified Payment Modal**: 
   - Removed billing address requirement for streamlined checkout

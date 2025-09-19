@@ -48,21 +48,21 @@ const TopBar: React.FC<TopBarProps> = ({
   return (
     <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="bg-gradient-to-r from-[#77A060] to-green-700 backdrop-blur-sm border-b border-green-800/20 shadow-lg">
-        <div className="container mx-auto px-4 py-1">
-          <div className="flex items-center justify-center space-x-2 sm:space-x-6">
+        <div className="container mx-auto px-2 sm:px-4 py-1">
+          <div className="flex items-center justify-center space-x-1 sm:space-x-6">
             {/* Left side - Offer text */}
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              <span className="text-base sm:text-lg">🔥</span>
-              <span className="text-xs sm:text-sm font-medium text-white whitespace-nowrap">Begrenztes Angebot</span>
-              <span className="text-xs px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full font-semibold border border-white/30 whitespace-nowrap">
+            <div className="flex items-center space-x-1 sm:space-x-3">
+              <span className="text-sm sm:text-lg">🔥</span>
+              <span className="text-xs font-medium text-white whitespace-nowrap hidden sm:inline">Begrenztes Angebot</span>
+              <span className="text-xs px-1 sm:px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full font-semibold border border-white/30 whitespace-nowrap">
                 {discountPercentage}% SPAREN
               </span>
             </div>
             
             {/* Center - Timer with enhanced design */}
-            <div className="flex items-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-2 sm:px-4 py-1">
+            <div className="flex items-center space-x-1 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-1 sm:px-4 py-1">
               <div className="flex items-center space-x-1 sm:space-x-2">
-                <span className="text-xs font-medium text-white/90 whitespace-nowrap">Endet in</span>
+                <span className="text-xs font-medium text-white/90 whitespace-nowrap hidden sm:inline">Endet in</span>
               </div>
               <div className="flex space-x-1">
                 <div className="text-xs sm:text-sm font-mono font-bold text-white bg-white/20 px-1 sm:px-2 py-1 rounded-lg whitespace-nowrap">
@@ -93,10 +93,10 @@ const TopBar: React.FC<TopBarProps> = ({
             {/* Mobile close button */}
             <button 
               onClick={() => setIsVisible(false)}
-              className="sm:hidden group w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm border border-white/30"
+              className="sm:hidden group w-5 h-5 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-sm border border-white/30"
               aria-label="Schließen"
             >
-              <svg className="w-3 h-3 text-white group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-2.5 h-2.5 text-white group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
