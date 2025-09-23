@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Download, BookOpen, Headphones, Tablet, Check, Gift, ShoppingCart, Star, Heart, GraduationCap } from 'lucide-react';
+import { Download, BookOpen, Headphones, Tablet, Check, Gift, ShoppingCart, Star, Heart, GraduationCap, Play } from 'lucide-react';
 import PaymentModal from './PaymentModal';
 import ThankYouPopup from './ThankYouPopup';
+import VideoPopup from './VideoPopup';
 
 interface PurchaseSectionProps {
   timeLeft?: number;
@@ -12,6 +13,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
   const [showThankYou, setShowThankYou] = useState(false);
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const handleOpenPayment = () => {
     setIsPaymentOpen(true);
@@ -37,6 +39,14 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
     document.body.removeChild(link);
   };
 
+  const handleOpenVideo = () => {
+    setIsVideoOpen(true);
+  };
+
+  const handleCloseVideo = () => {
+    setIsVideoOpen(false);
+  };
+
   const formats = [
     {
       icon: <Download className="w-8 h-8" style={{ color: '#77A060' }} />,
@@ -52,15 +62,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
       description: "Hochwertige Druckausgabe, perfekt zum Sammeln",
       price: "€24.99",
       originalPrice: "€29.99",
-      popular: false
-    },
-    {
-      icon: <Headphones className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "Hörbuch",
-      description: "Vom Autor gelesen, 4 Stunden Hörvergnügen",
-      price: "€16.99",
-      originalPrice: "€21.99",
-      popular: false
+      popular: true
     }
   ];
 
@@ -78,7 +80,6 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
         src="/d3.png" 
         alt="Background pattern"
         className="absolute top-0 left-0 w-full h-full object-cover opacity-100"
-        style={{ objectFit: 'repeat' }}
       />
       
       {/* Creative Purchase & Shopping Icons */}
@@ -115,6 +116,31 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
           <div className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full font-bold shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-200">
             <Gift className="w-5 h-5" />
             <span>Begrenzte Zeit: 25% Rabatt auf alle Formate</span>
+          </div>
+        </div>
+
+        {/* Video Preview Section */}
+        <div className="mb-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-[#77A060]/20">
+              <div className="relative">
+                <div className="aspect-video bg-gradient-to-br from-[#77A060]/10 to-green-50 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl cursor-pointer hover:scale-110 transition-transform duration-300" onClick={handleOpenVideo}>
+                      <Play className="w-8 h-8 text-white ml-1" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 font-lora">Buchvorschau ansehen</h3>
+                    <p className="text-gray-600 font-inter">Entdecke die faszinierende Welt des menschlichen Gehirns</p>
+                    <button 
+                      onClick={handleOpenVideo}
+                      className="mt-4 px-6 py-3 bg-gradient-to-r from-[#77A060] to-green-700 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                    >
+                      Video abspielen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -233,6 +259,13 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
           </div>
         </div>
       </div>
+
+      <VideoPopup
+        videoUrl="/book-preview.mp4"
+        isOpen={isVideoOpen}
+        onClose={handleCloseVideo}
+        timeLeft={timeLeft}
+      />
 
       <PaymentModal
         isOpen={isPaymentOpen}

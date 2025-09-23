@@ -114,15 +114,11 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             
             <div className="mt-8 flex items-center justify-center lg:justify-start space-x-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-black font-lora">25K+</div>
-                <div className="text-black/70 font-inter">Verkauft</div>
-              </div>
-              <div className="text-center">
                 <div className="text-3xl font-bold text-black font-lora">4.9★</div>
                 <div className="text-black/70 font-inter">Bewertung</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-black font-lora">8-12</div>
+                <div className="text-3xl font-bold text-black font-lora">9-99</div>
                 <div className="text-black/70 font-inter">Jahre</div>
               </div>
             </div>

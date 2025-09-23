@@ -11,7 +11,7 @@ const BookDetails = () => {
     {
       icon: <Globe className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Für Kinder",
-      description: "Perfekt für neugierige Kinder von 8-12 Jahren"
+      description: "Perfekt für neugierige Kinder von 9-99 Jahren"
     },
     {
       icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
@@ -20,18 +20,33 @@ const BookDetails = () => {
     },
     {
       icon: <Award className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "Preisgekrönt",
-      description: "Bestes Kindersachbuch 2024"
+      title: "Vom Nobelpreisträger erzählt",
+      description: "Eine Reise ins Gehirn – aus der Sicht eines Nobelpreisträgers für Medizin."
     },
     {
-      icon: <Users className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "25K+ Leser",
-      description: "Begeisterte Kinder und Eltern weltweit"
+      icon: <Globe className="w-8 h-8" style={{ color: '#77A060' }} />,
+      title: "Von 9 bis 99",
+      description: "Für neugierige Kinder – und für Erwachsene, die wieder staunen wollen."
     },
     {
-      icon: <Zap className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "Wissenschaftlich",
-      description: "Echte Neurowissenschaft kindgerecht erklärt"
+      icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
+      title: "64 Seiten",
+      description: "Voller spannender Illustrationen und Grafiken"
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" style={{ color: '#77A060' }} />,
+      title: "Leicht verständlich",
+      description: "Selbst bei komplexen Themen"
+    },
+    {
+      icon: <Heart className="w-8 h-8" style={{ color: '#77A060' }} />,
+      title: "Lesen verbindet",
+      description: "Ein Buch, das Generationen verbindet, Gespräche anregt und Wissen spannend macht."
+    },
+    {
+      icon: <Star className="w-8 h-8" style={{ color: '#77A060' }} />,
+      title: "Wow-Momente",
+      description: "Überraschende Fakten, die im Kopf bleiben."
     }
   ];
 
@@ -114,19 +129,19 @@ const BookDetails = () => {
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#77A060' }}></div>
-                  <p className="text-black font-inter">Wie dein Gehirn aus 86 Milliarden Neuronen besteht und wie sie miteinander sprechen</p>
+                  <p className="text-black font-inter">Wie sich dein Gehirn aus einer einzigen Zelle entwickelt – und warum es so genial organisiert ist.</p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#77A060' }}></div>
-                  <p className="text-black font-inter">Warum das Kleinhirn 80% aller Gehirnzellen enthält und was es alles kann</p>
+                  <p className="text-black font-inter">Was 86 Milliarden Neuronen können und wie sie schneller funken als ein Rennwagen fährt.</p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#77A060' }}></div>
-                  <p className="text-black font-inter">Wie Gedanken und Erinnerungen entstehen und warum Schlaf so wichtig ist</p>
+                  <p className="text-black font-inter">Warum dein Gehirn im Schlaf weiterarbeitet, neue Erinnerungen speichert und sogar träumt.</p>
                 </div>
                 <div className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#77A060' }}></div>
-                  <p className="text-black font-inter">Spannende Geschichten von berühmten Gehirnforschern wie Dr. Santiago Ramón y Cajal</p>
+                  <p className="text-black font-inter">Dass manche Menschen Musik in Farben sehen – und wie einzigartig jedes Gehirn die Welt wahrnimmt.</p>
                 </div>
               </div>
             </div>

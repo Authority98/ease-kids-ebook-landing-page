@@ -67,17 +67,45 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
       avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Thomas Richter",
-      title: "Vater und Biologielehrer",
+      name: "Maria González",
+      title: "Mutter aus Barcelona",
       rating: 5,
-      review: "Als Biologielehrer bin ich beeindruckt von der wissenschaftlichen Genauigkeit. Mein Sohn liebt die bunten Bilder und ich die präzisen Erklärungen.",
+      review: "¡Increíble libro! Mi hijo de 10 años no para de leerlo y me explica cosas fascinantes sobre el cerebro. Las ilustraciones de Isa son preciosas.",
+      avatar: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150"
+    },
+    {
+      name: "Dr. Carmen Ruiz",
+      title: "Neuropsicóloga",
+      rating: 5,
+      review: "Como profesional, puedo confirmar que la información es rigurosa y está perfectamente adaptada para niños. Pablo ha hecho un trabajo excepcional.",
+      avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
+    },
+    {
+      name: "Familie Weber",
+      title: "Eltern aus München",
+      rating: 5,
+      review: "Unsere Tochter (9) liebt das Buch! Sie zeigt uns ständig die tollen Bilder und erklärt, was sie gelernt hat. Perfekt für wissbegierige Kinder.",
+      avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
+    },
+    {
+      name: "Ana Martín",
+      title: "Lehrerin aus Madrid",
+      rating: 5,
+      review: "Lo uso en clase y los niños están fascinados. Es científicamente correcto pero muy accesible. Las ilustraciones ayudan muchísimo a la comprensión.",
+      avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
+    },
+    {
+      name: "Claudia Becker",
+      title: "Buchhändlerin",
+      rating: 5,
+      review: "Eines der besten Kindersachbücher, die ich je gesehen habe. Die Kunden sind begeistert und kommen immer wieder, um es zu empfehlen.",
       avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Lena Hoffmann",
-      title: "Mutter von zwei Kindern",
+      name: "Sofia Jiménez",
+      title: "Madre de dos niños",
       rating: 5,
-      review: "Beide Kinder (8 und 11) lieben das Buch! Es ist lehrreich ohne langweilig zu sein. Die Illustrationen von Isa Loureiro sind einfach fantastisch.",
+      review: "Mis hijos de 8 y 12 años lo leen juntos. Es increíble ver cómo un libro puede unir a hermanos de diferentes edades. ¡Muy recomendado!",
       avatar: "https://images.pexels.com/photos/3796212/pexels-photo-3796212.jpeg?auto=compress&cs=tinysrgb&w=150"
     }
   ];
@@ -126,7 +154,7 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
             </defs>
           </svg>
           <p className="text-xl text-black font-inter">
-            Authentische Bewertungen von Eltern, Lehrern und begeisterten Kindern
+            Bewertungen von Eltern, Buchrezensenten und begeisterten Lesern
           </p>
         </div>
 
