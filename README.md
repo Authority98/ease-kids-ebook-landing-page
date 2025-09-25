@@ -165,6 +165,8 @@ vite.config.ts
   - Kept left alignment on larger screens for desktop layout
   - Improved visual balance on mobile view
 
+  - Updated "Warum dieses Buch besonders ist" section in BookDetails.tsx to display only 6 specific boxes with new German content.
+
 ### Version 5.0 - Content Authenticity & Real Author Integration (January 2025)
 
 - **Authentic Author Information**:

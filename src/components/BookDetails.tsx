@@ -4,21 +4,6 @@ import { Calendar, Globe, BookOpen, Award, Users, Zap, Lightbulb, Heart, Star, G
 const BookDetails = () => {
   const features = [
     {
-      icon: <Calendar className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "Neu erschienen",
-      description: "2024 veröffentlicht mit den neuesten Erkenntnissen"
-    },
-    {
-      icon: <Globe className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "Für Kinder",
-      description: "Perfekt für neugierige Kinder von 9-99 Jahren"
-    },
-    {
-      icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "64 Seiten",
-      description: "Vollgepackt mit bunten Illustrationen und Wissen"
-    },
-    {
       icon: <Award className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Vom Nobelpreisträger erzählt",
       description: "Eine Reise ins Gehirn – aus der Sicht eines Nobelpreisträgers für Medizin."
