@@ -8,11 +8,12 @@ This is a modern, interactive landing page for an educational ebook targeted at 
 - **Video Preview Modal**: Professional video popup with enhanced styling, backdrop blur, and improved UX.
 - **Book Preview**: Interactive glimpse into the book's content with iframe integration.
 - **Detailed Book Information**: Key features and benefits with styled book element from hero section.
-- **Author Spotlight**: Information about the author, Dr. Santiago Ramón y Cajal.
-- **Customer Reviews**: Testimonials from parents, teachers, and children.
-- **Complete Payment System**: Secure payment modal with form validation and success flow.
-- **Purchase Options**: Different formats (E-book, Hardcover, Audiobook) with pricing.
-- **Download Functionality**: Ebook download feature after successful purchase.
+- **Author Spotlight**: Information about the authors, Dr. Pablo José Barrecheguren Manero, Isa Loureiro, and Teresa Ruiz Rosas.
+  - **Customer Reviews**: Testimonials from parents, teachers, and children, including new content and German translations.
+  - **Complete Payment System**: Secure payment modal with form validation and success flow.
+  - **Purchase Options**: Hardcover format with pricing.
+  - **Download Functionality**: Ebook download feature after successful purchase.
+- **Video Preview**: Video preview with a thumbnail and play button, replacing the interactive flipbook.
 
 ## Technologies Used
 
@@ -96,230 +97,33 @@ vite.config.ts
 
 ## Recent Updates
 
-### Version 4.0 - Enhanced Timer & Pricing Features (January 2025)
-- **Updated Timer System**:
-  - Reduced countdown timer from 10 minutes to 5 minutes for increased urgency
-  - Implemented shared time state management across all components
-  - Enhanced timer synchronization between top bar and payment modal
-  - Added time display to payment modal for better user awareness
+### Latest Enhancements (Current Session)
 
-- **Improved Pricing Display**:
-  - Added discounted pricing to payment modal (€14.99 instead of €19.99)
-  - Implemented "25% SPAREN" badge with visual indicators
-  - Enhanced price presentation with savings information
-  - Updated submit button to show discounted price with percentage badge
+- **Author Section Update**:
+  - Updated author information for Dr. Pablo José Barrecheguren Manero, Isa Loureiro, and Teresa Ruiz Rosas.
+  - Added new images for each author.
 
-- **Refined Top Bar Design**:
-  - Made top bar slimmer with reduced vertical padding
-  - Added single fire emoji (🔥) for subtle urgency indication
-  - Removed continuous blinking animations for cleaner appearance
-  - Maintained professional aesthetic while keeping promotional elements
+- **Testimonials Section Update**:
+  - Replaced all existing testimonials with new ones from various Instagram accounts.
+  - Translated English testimonials to German.
 
-- **Enhanced User Experience**:
-  - Improved visual hierarchy and spacing
-  - Better integration of timer across all purchase touchpoints
-  - More cohesive design language throughout the application
+- **Video Preview Section Update**:
+  - Replaced the interactive flipbook with a video preview.
+  - Implemented a video thumbnail with a play button overlay.
+  - Adjusted the video box to a 16:9 aspect ratio.
+  - Made the play button and overlay permanently visible.
 
-### Version 4.1 - Refined Top Bar Design (January 2025)
+- **Purchase Section Adjustments**:
+  - Removed the E-book card from the pricing section.
+  - Centered the Hardcover section.
 
-- **Cleaner Timer**: Removed dot and border from timer section for minimal design
-- **Slimmer Profile**: Reduced vertical padding for more elegant appearance
-- **Simplified Elements**: Streamlined visual elements while maintaining functionality
+- **Top Bar Removal**:
+  - Removed the promotional top bar displaying "Begrenztes Angebot 25% SPAREN Endet in 5:00".
 
-### Version 4.2 - Mobile Design Improvements (January 2025)
 
-- **Hero Rating Centering**: Rating element now centered on mobile devices only
-- **Top Bar Mobile Optimization**: Text stays in one line on mobile with responsive sizing
-- **Card Network Shadows**: Added shadow effects to payment method images for better visual depth
 
-### Version 4.3 - Payment Modal Mobile Optimization & Simplification (January 2025)
 
-- **Mobile Cut-off Fix**: Resolved payment modal being cut off on mobile devices
-  - Added vertical scrolling with `max-h-[95vh]` and `overflow-y-auto`
-  - Reduced mobile padding throughout modal (p-2 vs p-4)
-  - Optimized header, form fields, and buttons for mobile screens
-  - Reduced decorative element sizes on mobile devices
 
-- **Simplified Personal Information**: 
-  - Removed separate first name and last name fields
-  - Combined into single "Vollständiger Name" (Full Name) field
-  - Full name and email now appear side by side in responsive grid
-  - Streamlined checkout process with fewer required fields
-
-- **Enhanced Mobile UX**:
-  - Reduced input field padding for better mobile usability
-  - Optimized timer section and rating elements for small screens
-  - Maintained all payment functionality while improving mobile experience
-
-### Version 4.4 - Top Bar & Author Section Mobile Fixes (January 2025)
-
-- **Top Bar Mobile Optimization**:
-  - Fixed content cut-off on mobile devices
-  - Reduced horizontal padding (px-2 vs px-4) and spacing (space-x-1 vs space-x-2)
-  - Hid longer text elements ("Begrenztes Angebot", "Endet in") on mobile screens
-  - Reduced font sizes and button sizes for better mobile fit
-  - Maintained all functionality while preventing overflow
-
-- **Author Section Social Icons**:
-  - Centered social media icons on mobile devices
-  - Kept left alignment on larger screens for desktop layout
-  - Improved visual balance on mobile view
-
-  - Updated "Warum dieses Buch besonders ist" section in BookDetails.tsx to display only 6 specific boxes with new German content.
-
-### Version 5.0 - Content Authenticity & Real Author Integration (January 2025)
-
-- **Authentic Author Information**:
-  - Updated author section with **Dr. Pablo José Barrecheguren Manero** (Neurowissenschaftler & Wissenschaftskommunikator)
-  - Added comprehensive biography and professional background
-  - Integrated social media links (Twitter, Instagram, LinkedIn, YouTube)
-  - Replaced placeholder content with authentic author information
-
-- **Creative Team Integration**:
-  - Added **Isa Loureiro** as book illustrator with full biography and portfolio links
-  - Added **Teresa Ruiz Rosas** as translator with professional background
-  - Created dedicated sections for each team member with consistent styling
-  - Enhanced team presentation with social media integration
-
-- **Content Localization & Enhancement**:
-  - Updated BookDetails features section with 6 new German phrases about brain science
-  - Replaced "Was du entdecken wirst" section with 4 engaging German discovery points
-  - Enhanced content authenticity with scientifically accurate descriptions
-  - Improved German language consistency throughout the application
-
-- **Reviews Section Overhaul**:
-  - Updated section title from "Authentische Bewertungen" to "Bewertungen von Eltern, Buchrezensenten und begeisterten Lesern"
-  - Replaced all placeholder reviews with 6 authentic-style reviews based on real feedback
-  - Enhanced review credibility with diverse reviewer backgrounds
-  - Maintained 4.9/5 rating with realistic review distribution
-
-- **Purchase Experience Modernization**:
-  - Removed audiobook and ebook options to focus on hardcover format
-  - Added prominent **video preview section** with interactive play button
-  - Integrated VideoPopup component for seamless book preview experience
-  - Enhanced purchase flow with video-first approach to content discovery
-
-- **Technical Improvements**:
-  - Fixed linter errors and code quality issues
-  - Enhanced component integration and state management
-  - Improved responsive design across all updated sections
-  - Maintained existing design aesthetic while adding new functionality
-
-### Version 4.5 - ThankYouPopup Architecture Fix (January 2025)
-
-- **ThankYouPopup State Management**:
-  - Fixed ThankYouPopup not appearing after successful payment submission
-  - Moved popup state management from PaymentModal to parent components (Hero, PurchaseSection, Reviews)
-  - Added `onPaymentSuccess` callback prop to PaymentModal for parent-level state management
-  - Removed internal `showThankYou` state from PaymentModal to prevent unmounting issues
-  - Implemented consistent ThankYouPopup handling across all payment entry points
-
-- **Enhanced Payment Flow**:
-  - PaymentModal now triggers `onPaymentSuccess` callback with customer name and email
-  - Parent components manage ThankYouPopup visibility independently
-  - **Removed the "Fantastisch!" success screen - now directly shows ThankYouPopup**
-  - ThankYouPopup now appears immediately after payment with download functionality
-  - Streamlined user experience by eliminating duplicate success messages
-
-### Version 3.0 - Enhanced Payment Experience & UI Improvements
-- **Simplified Payment Modal**: 
-  - Removed billing address requirement for streamlined checkout
-  - Reduced modal height for better user experience
-  - Added creative visual elements (Brain, Sparkles icons)
-  - Implemented warm color palette with gradients
-  - Enhanced success screen with animations and visual feedback
-  - Maintained security indicators and professional design
-
-- **Universal Buy Button Integration**:
-  - Connected all buy buttons across the landing page to PaymentModal
-  - Hero section "Jetzt kaufen" button ✅
-  - Video popup "Jetzt kaufen" button ✅  
-  - Purchase section format buttons (E-Book, Hardcover, Hörbuch) ✅
-  - Reviews section "Jetzt dein Exemplar sichern" button ✅
-  - Consistent payment flow across all entry points
-
-- **Design Consistency**:
-  - Matching fonts, colors, and spacing with landing page aesthetic
-  - Rounded design elements and modern styling
-  - Improved visual hierarchy and user experience
-  - Enhanced accessibility and responsive design
-
-### Version 2.0 - Complete Interactive Experience
-- **PaymentModal Component**: Added comprehensive payment modal with:
-  - Personal information form (name, email)
-  - Secure payment details form (card number, expiry, CVV)
-  - Billing address collection
-  - Form validation and formatting
-  - Payment processing simulation
-  - Success screen with download functionality
-  - Professional styling with animations and transitions
-
-- **Enhanced Video Modal**: Improved VideoPopup component with:
-  - Better visual design and backdrop blur effects
-  - Enhanced UX with smooth animations
-  - Professional header with icons and branding
-  - Integrated buy button connected to payment modal
-  - Improved responsive design
-
-- **Hero Section Enhancements**: 
-  - Connected buy button to payment modal
-  - Maintained bestseller book element styling
-  - Improved call-to-action## Recent Updates
-
-### Latest UI/UX Enhancements (January 2025)
-- **Top Bar with Countdown Timer**:
-  - Added beautiful promotional top bar with 30-minute countdown timer
-  - 25% discount messaging with animated progress bar
-  - Responsive design for mobile and desktop
-  - Smooth animations and professional styling
-  - Auto-hide functionality when timer expires
-
-- **Payment Modal Stability Fixes**:
-  - Fixed persistent blank page issue after payment submission
-  - Added setTimeout wrapper for DOM manipulation safety
-  - Improved React Fragment handling to prevent insertBefore errors
-  - Enhanced error handling and state management
-
-- **Hero Section Enhancements**:
-  - Added 4.9/5 rating text back next to stars
-  - Enlarged bestseller book image for better visibility
-  - Enhanced shadow effects on stars with gradient styling
-  - Removed review count for cleaner presentation
-
-- **Icon System Overhaul**:
-  - Replaced sparkle icons with relevant educational icons (Brain, BookOpen, GraduationCap, etc.)
-  - Restricted Brain icons to appear only in the Hero section for focused branding
-  - Enhanced icon consistency across all components
-
-- **Color Scheme Unification**:
-  - Updated VideoPopup styling to match payment page color scheme using brand green (#77A060)
-  - Applied gradient colors to review stars with crispy visual effects
-  - Removed specific review count numbers for cleaner presentation
-  - Updated all bestseller, limited time, and popular choice tags with gradient styling
-
-- **Visual Improvements**:
-  - Enhanced shadow effects on book cover images (upgraded to shadow-2xl)
-  - Improved payment success flow with better thank you message and download functionality
-  - Added proper user feedback for download process
-  - Enhanced payment confirmation styling with brand colors
-
-- **Payment System Enhancements**:
-  - Fixed blank submission issue with proper success state handling
-  - Improved download functionality with user feedback
-  - Enhanced success message styling and information clarity
-  - Added comprehensive payment confirmation details
-
-### Previous Major Updates
-- **BookDetails Improvements**:
-  - Replaced simple book cover image with styled book element from hero section
-  - Added bestseller tag and hover animations
-  - Enhanced visual consistency across components
-
-### Previous Updates
-- Hidden header and footer components (can be re-enabled in `src/App.tsx`).
-- Moved background image from Hero section to Book Preview and Book Details sections.
-- Replaced the flipbook with brain illustrations in the "Was du entdecken wirst" section of `BookDetails.tsx` with a single `book-cover.png` image.
-- Reverted the page flip effect in the "Blättere durch das Buch" section of `BookPreview.tsx` back to an iframe embed code.
 
 ## Contributing
 

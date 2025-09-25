@@ -56,14 +56,14 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
       name: "@mintundmalve",
       title: "",
       rating: 5,
-      review: "Mega exciting! I love such books and then designed like this! 😍 Getting on the wish list! ❤️",
+      review: "Mega spannend! Ich liebe solche Bücher und dann noch so gestaltet! 😍 Kommt auf die Wunschliste! ❤️",
       avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
       name: "@frau_buecherfee",
       title: "",
       rating: 5,
-      review: "How ingenious is this done 😍",
+      review: "Wie genial ist das gemacht 😍",
       avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
@@ -77,7 +77,7 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
       name: "@liesa_kinderbuchbloggerin",
       title: "",
       rating: 5,
-      review: "A super great nonfiction book! Greatly illustrated and so informative ☺️",
+      review: "Ein super tolles Sachbuch! Toll illustriert und so informativ ☺️",
       avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
     }
   ];
