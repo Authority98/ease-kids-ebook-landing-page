@@ -39,74 +39,46 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
 
   const reviews = [
     {
-      name: "Anna Müller",
-      title: "Grundschullehrerin",
+      name: "@janettsmeinung",
+      title: "",
       rating: 5,
-      review: "Meine Schüler sind begeistert! Das Buch erklärt das Gehirn so verständlich und die Illustrationen sind wunderschön. Perfekt für den Sachunterricht.",
+      review: "Ein spannendes Thema und auch sehr ansprechend und modern umgesetzt. Gefällt mir!",
       avatar: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Familie Schmidt",
-      title: "Eltern von Emma (9 Jahre)",
+      name: "@buecher.fux",
+      title: "",
       rating: 5,
-      review: "Emma liest das Buch immer wieder! Sie erklärt uns jetzt, wie ihr Gehirn funktioniert. Ein tolles Buch, das Wissenschaft spannend macht.",
+      review: "Uhiii krass genial 🤩 das gefällt mir auf Anhieb!!!!",
       avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Dr. Sarah Weber",
-      title: "Kinderärztin",
+      name: "@mintundmalve",
+      title: "",
       rating: 5,
-      review: "Endlich ein Buch, das Kindern wissenschaftlich korrekt erklärt, wie das Gehirn funktioniert! Ich empfehle es allen meinen kleinen Patienten.",
+      review: "Mega exciting! I love such books and then designed like this! 😍 Getting on the wish list! ❤️",
       avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Max (10 Jahre)",
-      title: "Schüler",
+      name: "@frau_buecherfee",
+      title: "",
       rating: 5,
-      review: "Das Buch ist mega cool! Ich wusste nicht, dass mein Gehirn so viele Neuronen hat. Jetzt will ich auch Gehirnforscher werden!",
+      review: "How ingenious is this done 😍",
       avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Maria González",
-      title: "Mutter aus Barcelona",
+      name: "@lisaliundsus",
+      title: "",
       rating: 5,
-      review: "¡Increíble libro! Mi hijo de 10 años no para de leerlo y me explica cosas fascinantes sobre el cerebro. Las ilustraciones de Isa son preciosas.",
+      review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek☺️",
       avatar: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150"
     },
     {
-      name: "Dr. Carmen Ruiz",
-      title: "Neuropsicóloga",
+      name: "@liesa_kinderbuchbloggerin",
+      title: "",
       rating: 5,
-      review: "Como profesional, puedo confirmar que la información es rigurosa y está perfectamente adaptada para niños. Pablo ha hecho un trabajo excepcional.",
+      review: "A super great nonfiction book! Greatly illustrated and so informative ☺️",
       avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Familie Weber",
-      title: "Eltern aus München",
-      rating: 5,
-      review: "Unsere Tochter (9) liebt das Buch! Sie zeigt uns ständig die tollen Bilder und erklärt, was sie gelernt hat. Perfekt für wissbegierige Kinder.",
-      avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Ana Martín",
-      title: "Lehrerin aus Madrid",
-      rating: 5,
-      review: "Lo uso en clase y los niños están fascinados. Es científicamente correcto pero muy accesible. Las ilustraciones ayudan muchísimo a la comprensión.",
-      avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Claudia Becker",
-      title: "Buchhändlerin",
-      rating: 5,
-      review: "Eines der besten Kindersachbücher, die ich je gesehen habe. Die Kunden sind begeistert und kommen immer wieder, um es zu empfehlen.",
-      avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "Sofia Jiménez",
-      title: "Madre de dos niños",
-      rating: 5,
-      review: "Mis hijos de 8 y 12 años lo leen juntos. Es increíble ver cómo un libro puede unir a hermanos de diferentes edades. ¡Muy recomendado!",
-      avatar: "https://images.pexels.com/photos/3796212/pexels-photo-3796212.jpeg?auto=compress&cs=tinysrgb&w=150"
     }
   ];
 

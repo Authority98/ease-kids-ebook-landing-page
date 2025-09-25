@@ -49,14 +49,6 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
 
   const formats = [
     {
-      icon: <Download className="w-8 h-8" style={{ color: '#77A060' }} />,
-      title: "E-Book",
-      description: "Sofortiger Download, interaktive Elemente",
-      price: "€14.99",
-      originalPrice: "€19.99",
-      popular: true
-    },
-    {
       icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Hardcover",
       description: "Hochwertige Druckausgabe, perfekt zum Sammeln",
@@ -123,28 +115,35 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
         <div className="mb-16">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-[#77A060]/20">
-              <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-[#77A060]/10 to-green-50 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl cursor-pointer hover:scale-110 transition-transform duration-300" onClick={handleOpenVideo}>
-                      <Play className="w-8 h-8 text-white ml-1" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 font-lora">Buchvorschau ansehen</h3>
-                    <p className="text-gray-600 font-inter">Entdecke die faszinierende Welt des menschlichen Gehirns</p>
-                    <button 
-                      onClick={handleOpenVideo}
-                      className="mt-4 px-6 py-3 bg-gradient-to-r from-[#77A060] to-green-700 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                    >
-                      Video abspielen
-                    </button>
+              <div className="relative cursor-pointer" onClick={handleOpenVideo}>
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+                  <img 
+                    src="/book-cover.png" 
+                    alt="Video Thumbnail"
+                    className="absolute inset-0 w-full h-full object-cover rounded-t-3xl"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-[#77A060] to-green-700 rounded-full flex items-center justify-center shadow-xl transform scale-110 transition-transform duration-300">
+                    <Play className="w-8 h-8 text-white ml-1" />
                   </div>
                 </div>
+              </div>
+              <div className="p-8 text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2 font-lora">Buchvorschau ansehen</h3>
+                <p className="text-gray-600 font-inter">Entdecke die faszinierende Welt des menschlichen Gehirns</p>
+                <button 
+                  onClick={handleOpenVideo}
+                  className="mt-4 px-6 py-3 bg-gradient-to-r from-[#77A060] to-green-700 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                >
+                  Video abspielen
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-1 gap-8 mb-16 justify-center">
           {formats.map((format, index) => (
             <div 
               key={index}

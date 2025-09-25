@@ -45,6 +45,8 @@ const TopBar: React.FC<TopBarProps> = ({
 
   if (!isVisible) return null;
 
+  if (true) return null; // Always return null to remove the top bar
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="bg-gradient-to-r from-[#77A060] to-green-700 backdrop-blur-sm border-b border-green-800/20 shadow-lg">

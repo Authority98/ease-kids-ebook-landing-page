@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Linkedin, Globe, BookOpen, Lightbulb, Award, Heart, GraduationCap } from 'lucide-react';
+import { Twitter, Linkedin, Globe, BookOpen, Lightbulb, Award, Heart, GraduationCap, Youtube, Instagram, Facebook } from 'lucide-react';
 
 const Author = () => {
   return (
@@ -48,7 +48,7 @@ const Author = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-black/10 rounded-3xl transform rotate-3 scale-105"></div>
             <img 
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              src="/Pablo.jpg" 
               alt="Dr. Pablo Barrecheguren - Autor"
               className="relative w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl"
             />
@@ -59,53 +59,61 @@ const Author = () => {
               Dr. Pablo José Barrecheguren Manero
             </h3>
             <p className="text-xl mb-6 font-inter" style={{ color: '#77A060' }}>
-              Neurowissenschaftler & Wissenschaftskommunikator
+              A passionate scientist, doctor in biomedicine and expert in science communication.
             </p>
             
             <div className="space-y-4 text-black mb-8">
               <p className="font-inter">
-                A passionate scientist, doctor in biomedicine and expert in science communication. 
-                After studying Biochemistry in his native Zaragoza and researching for a year at Cambridge 
-                University (UK), Pablo obtained master's degree and a PhD on Neurosciences at the University 
-                of Barcelona.
+                After studying Biochemistry in his native Zaragoza and researching for a year at Cambridge
+                University (UK), Pablo obtained master’s degree and a PhD on Neurosciences at the University
+                of Barcelona. It was after finishing them that he became a finalist in the scientific monologue
+                competition ‘FamelabEspaña’ and moved from the labs to the stage.
               </p>
               
               <p className="font-inter">
-                It was after finishing them that he became a finalist in the scientific monologue 
-                competition 'FamelabEspaña' and moved from the labs to the stage. His studies at the Ateneo Barcelonés Writing School have led him to publish Neurogamer (2021, 
-                Ed. Paidós), a book that explores how video games affect our brain.
+                His studies at the Ateneo Barcelonés Writing School have led him to publish Neurogamer (2021,
+                Ed. Paidós), a book that explores how video games affect our brain. He is also author and co-
+                author of science journalism articles (elPaís) and several popular science books, among them
+                “The Human Brain”, which was translated to German and published by Eurasian Scientific
+                Editions.
               </p>
               
               <p className="font-inter">
-                He is also author and co-author of science journalism articles (elPaís) and several popular science books, among them 
-                "The Human Brain", which was translated to German and published by Eurasian Scientific 
-                Editions. Pablo has also studied at Imperial College London, obtained the prestigious master's degree 
-                Science Media Production, and has twice won national funding (FECYT) for audiovisual projects: 
-                Neurocosas (2017) and Neuropíldoras (2018).
+                Pablo has also studied at Imperial College London, obtained the prestigious master’s degree
+                Science Media Production, and has twice won national funding (FECYT) for audiovisual projects:
+                Neurocosas (2017) and Neuropíldoras (2018). All this information and experience has led him to
+                work as a trainer in all aspects of science communication and you can follow his work on the
               </p>
             </div>
 
             <div className="flex space-x-4 justify-center sm:justify-start">
-              <a 
-                href="https://x.com/pjbarrecheguren/status/984123915906768904" 
+              <a
+                href="https://x.com/pjbarrecheguren/status/984123915906768904"
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
                 <Twitter className="w-6 h-6" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/pablobarrecheguren/?locale=en_US" 
+              <a
+                href="https://www.linkedin.com/in/pablobarrecheguren/?locale=en_US"
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a 
-                href="https://www.instagram.com/pablobarrecheguren/?hl=en" 
+              <a
+                href="https://www.instagram.com/pablobarrecheguren/?hl=en"
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
-                <Globe className="w-6 h-6" />
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.youtube.com/neurocosas"
+                className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+                style={{ backgroundColor: '#77A060' }}
+              >
+                <Youtube className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -123,23 +131,33 @@ const Author = () => {
             
             <div className="space-y-4 text-black mb-8">
               <p className="font-inter">
-                "I am a drawing creature, dedicated to the visualization of science, with the desire to inspire 
-                children and adults alike". Isa studied Design at the University of Aveiro and continued her professional path in Barcelona, 
-                practicing in design and architecture studios as a senior graphic designer for more than 10 
+                “I am a drawing creature, dedicated to the visualization of science, with the desire to inspire
+                children and adults alike”. Isa Loureiro
+              </p>
+              
+              <p className="font-inter">
+                Isa studied Design at the University of Aveiro and continued her professional path in Barcelona,
+                practicing in design and architecture studios as a senior graphic designer for more than 10
                 years.
               </p>
               
               <p className="font-inter">
-                Her passion has always been illustration, so she decided to refine her skills and ended up 
-                specializing in scientific illustration (inter alia, she studied in Illustraciencia Academy) and 
+                Her passion has always been illustration, so she decided to refine her skills and ended up
+                specializing in scientific illustration (inter alia, she studied in Illustraciencia Academy) and
                 thereby contributing to the communication of human knowledge.
               </p>
               
               <p className="font-inter">
-                "I discovered beauty in the bizarre beings of the natural world as well as in the intricacies of the 
-                human body, and a real pleasure in drawing them. I take advantage of my inexhaustible 
-                patience to observe and draw what is complex, using objectivity as the fundamental basis of my 
-                work". In 2021 Isa received the Junceda award in the category of Scientific Illustration.
+                “I discovered beauty in the bizarre beings of the natural world as well as in the intricacies of the
+                human body, and a real pleasure in drawing them. I take advantage of my inexhaustible
+                patience to observe and draw what is complex, using objectivity as the fundamental basis of my
+                work”. Isa Loureiro
+              </p>
+              
+              <p className="font-inter">
+                In 2021 Isa received the Junceda award in the category of Scientific Illustration. Today she works
+                as an independent professional designer and illustrator, always willing to get involved in
+                projects or commissions that put her imagination and her hand to the test.
               </p>
             </div>
 
@@ -149,14 +167,14 @@ const Author = () => {
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
-                <Globe className="w-6 h-6" />
+                <Instagram className="w-6 h-6" />
               </a>
               <a 
                 href="https://www.facebook.com/isaloureiro.arteyciencia/" 
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
-                <Globe className="w-6 h-6" />
+                <Facebook className="w-6 h-6" />
               </a>
               <a 
                 href="https://x.com/isalou_sciart" 
@@ -178,7 +196,7 @@ const Author = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-black/10 rounded-3xl transform -rotate-3 scale-105"></div>
             <img 
-              src="https://images.pexels.com/photos/3796212/pexels-photo-3796212.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              src="/Isa2.jpg" 
               alt="Isa Loureiro - Illustratorin"
               className="relative w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl"
             />
@@ -190,7 +208,7 @@ const Author = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-black/10 rounded-3xl transform rotate-3 scale-105"></div>
             <img 
-              src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              src="/Teresa.jpg" 
               alt="Teresa Ruiz Rosas - Übersetzerin"
               className="relative w-full h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl"
             />
@@ -223,14 +241,14 @@ const Author = () => {
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
-                <Globe className="w-6 h-6" />
+                <Instagram className="w-6 h-6" />
               </a>
               <a 
                 href="https://www.facebook.com/teresaruizrosas/" 
                 className="p-3 text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
                 style={{ backgroundColor: '#77A060' }}
               >
-                <Globe className="w-6 h-6" />
+                <Facebook className="w-6 h-6" />
               </a>
               <a 
                 href="https://x.com/truizrosas" 
