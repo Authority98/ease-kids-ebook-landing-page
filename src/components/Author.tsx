@@ -59,30 +59,20 @@ const Author = () => {
               Dr. Pablo José Barrecheguren Manero
             </h3>
             <p className="text-xl mb-6 font-inter" style={{ color: '#77A060' }}>
-              A passionate scientist, doctor in biomedicine and expert in science communication.
+              Ein leidenschaftlicher Wissenschaftler, Doktor der Biomedizin und Experte für Wissenschaftskommunikation.
             </p>
             
             <div className="space-y-4 text-black mb-8">
               <p className="font-inter">
-                After studying Biochemistry in his native Zaragoza and researching for a year at Cambridge
-                University (UK), Pablo obtained master’s degree and a PhD on Neurosciences at the University
-                of Barcelona. It was after finishing them that he became a finalist in the scientific monologue
-                competition ‘FamelabEspaña’ and moved from the labs to the stage.
+                Nach seinem Biochemie-Studium in seiner Heimatstadt Saragossa und einem einjährigen Forschungsaufenthalt an der Universität Cambridge (UK) erwarb Pablo seinen Masterabschluss und promovierte in Neurowissenschaften an der Universität Barcelona. Im Anschluss daran wurde er Finalist des wissenschaftlichen Monologwettbewerbs „Famelab España“ und wechselte vom Labor auf die Bühne.
               </p>
               
               <p className="font-inter">
-                His studies at the Ateneo Barcelonés Writing School have led him to publish Neurogamer (2021,
-                Ed. Paidós), a book that explores how video games affect our brain. He is also author and co-
-                author of science journalism articles (elPaís) and several popular science books, among them
-                “The Human Brain”, which was translated to German and published by Eurasian Scientific
-                Editions.
+                Sein Studium an der Schreibschule Ateneo Barcelonés führte ihn zur Veröffentlichung von Neurogamer  (2021, Ed. Paidós), einem Buch, das untersucht, wie Videospiele unser Gehirn beeinflussen. Er ist zudem Autor und Co-Autor von wissenschaftsjournalistischen Artikeln ( elPaís ) und mehreren populärwissenschaftlichen Büchern, darunter „Das menschliche Gehirn“, das ins Deutsche übersetzt und bei Eurasian Scientific Editions veröffentlicht wurde.
               </p>
               
               <p className="font-inter">
-                Pablo has also studied at Imperial College London, obtained the prestigious master’s degree
-                Science Media Production, and has twice won national funding (FECYT) for audiovisual projects:
-                Neurocosas (2017) and Neuropíldoras (2018). All this information and experience has led him to
-                work as a trainer in all aspects of science communication and you can follow his work on the
+                Pablo hat außerdem am Imperial College London studiert, den renommierten Masterstudiengang „Science Media Production“ abgeschlossen und zweimal nationale Fördermittel (FECYT) für audiovisuelle Projekte gewonnen: Neurocosas  (2017) und Neuropíldoras  (2018). All diese Kenntnisse und Erfahrungen haben dazu geführt, dass er als Trainer in allen Aspekten der Wissenschaftskommunikation tätig ist. Sie können seine Arbeit verfolgen auf
               </p>
             </div>
 
@@ -131,33 +121,23 @@ const Author = () => {
             
             <div className="space-y-4 text-black mb-8">
               <p className="font-inter">
-                “I am a drawing creature, dedicated to the visualization of science, with the desire to inspire
-                children and adults alike”. Isa Loureiro
+                „Ich bin ein zeichnendes Wesen, das sich der Visualisierung der Wissenschaft widmet, mit dem Wunsch, Kinder und Erwachsene gleichermaßen zu inspirieren“. – Isa Loureiro
               </p>
               
               <p className="font-inter">
-                Isa studied Design at the University of Aveiro and continued her professional path in Barcelona,
-                practicing in design and architecture studios as a senior graphic designer for more than 10
-                years.
+                Isa studierte Design an der Universität von Aveiro und setzte ihren beruflichen Weg in Barcelona fort, wo sie mehr als 10 Jahre lang als Senior-Grafikdesignerin in Design- und Architekturbüros tätig war.
               </p>
               
               <p className="font-inter">
-                Her passion has always been illustration, so she decided to refine her skills and ended up
-                specializing in scientific illustration (inter alia, she studied in Illustraciencia Academy) and
-                thereby contributing to the communication of human knowledge.
+                Ihre Leidenschaft war schon immer die Illustration, weshalb sie beschloss, ihre Fähigkeiten zu verfeinern und sich schließlich auf die wissenschaftliche Illustration spezialisierte (unter anderem studierte sie an der Illustraciencia Academy), um so zur Vermittlung menschlichen Wissens beizutragen.
               </p>
               
               <p className="font-inter">
-                “I discovered beauty in the bizarre beings of the natural world as well as in the intricacies of the
-                human body, and a real pleasure in drawing them. I take advantage of my inexhaustible
-                patience to observe and draw what is complex, using objectivity as the fundamental basis of my
-                work”. Isa Loureiro
+                „Ich entdeckte die Schönheit in den bizarren Geschöpfen der Natur ebenso wie in den Feinheiten des menschlichen Körpers und empfinde eine wahre Freude daran, sie zu zeichnen. Ich nutze meine unerschöpfliche Geduld, um Komplexes zu beobachten und zu zeichnen, wobei Objektivität die grundlegende Basis meiner Arbeit ist“. – Isa Loureiro
               </p>
               
               <p className="font-inter">
-                In 2021 Isa received the Junceda award in the category of Scientific Illustration. Today she works
-                as an independent professional designer and illustrator, always willing to get involved in
-                projects or commissions that put her imagination and her hand to the test.
+                2021 erhielt Isa den Junceda-Preis in der Kategorie Wissenschaftliche Illustration. Heute arbeitet sie als freiberufliche Designerin und Illustratorin und ist stets bereit, sich auf Projekte oder Aufträge einzulassen, die ihre Vorstellungskraft und ihre Hand auf die Probe stellen.
               </p>
             </div>
 

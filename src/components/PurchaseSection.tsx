@@ -105,10 +105,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
             Wähle dein bevorzugtes Format und starte deine Reise ins Gehirn
           </p>
           
-          <div className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full font-bold shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 transition-all duration-200">
-            <Gift className="w-5 h-5" />
-            <span>Begrenzte Zeit: 25% Rabatt auf alle Formate</span>
-          </div>
+
         </div>
 
         {/* Video Preview Section */}
@@ -191,60 +188,14 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
                   }}
                   onClick={handleOpenPayment}
                 >
-                  {format.popular ? 'E-Book kaufen' : `${format.title} wählen`}
+                  {format.popular ? 'Jetzt kaufen' : `${format.title} wählen`}
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-white rounded-2xl p-8 lg:p-12 border-2 shadow-2xl" style={{ borderColor: '#77A060' }}>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-black mb-6 font-lora">
-                Was ist enthalten
-              </h3>
-              
-              <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <Check className="w-6 h-6 flex-shrink-0" style={{ color: '#77A060' }} />
-                    <span className="text-black font-inter">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="mt-8 p-6 bg-white rounded-xl border-2" style={{ borderColor: '#77A060' }}>
-                <h4 className="text-black font-semibold mb-2 font-lora">Spezial Launch Bonus</h4>
-                <p className="text-black text-sm font-inter">
-                  Bestelle in den nächsten 48 Stunden und erhalte exklusiven Zugang zu Dr. Pablos Online-Masterclass "Gehirnforschung für Kinder" (Wert: €97)
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-black/10 rounded-2xl transform rotate-3 scale-105"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-2xl">
-                <div className="text-center">
-                  <Tablet className="w-16 h-16 mx-auto mb-4" style={{ color: '#77A060' }} />
-                  <h4 className="text-2xl font-bold text-black mb-4 font-lora">
-                    Auf allen Geräten verfügbar
-                  </h4>
-                  <p className="text-black mb-6 font-inter">
-                    Lese auf deinem Handy, Tablet, Computer oder E-Reader. Nahtlose Synchronisation auf allen Geräten.
-                  </p>
-                  
-                  <div className="grid grid-cols-2 gap-4 text-sm text-black font-inter">
-                    <div>• iOS & Android</div>
-                    <div>• Kindle & EPUB</div>
-                    <div>• PDF Download</div>
-                    <div>• Web-Browser</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         <div className="text-center mt-16">
           <p className="text-black mb-4 font-inter">

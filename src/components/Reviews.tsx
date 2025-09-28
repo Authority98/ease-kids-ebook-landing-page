@@ -39,46 +39,46 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
 
   const reviews = [
     {
-      name: "@janettsmeinung",
+      name: "@familienchaos_mal_5",
       title: "",
       rating: 5,
-      review: "Ein spannendes Thema und auch sehr ansprechend und modern umgesetzt. Gefällt mir!",
-      avatar: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150"
-    },
-    {
-      name: "@buecher.fux",
-      title: "",
-      rating: 5,
-      review: "Uhiii krass genial 🤩 das gefällt mir auf Anhieb!!!!",
-      avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
+      review: "Sehr spannend, Dankeschön für die tolle Vorstellung! 😍",
+      avatar: "/familienchaos_mal_5.jpg"
     },
     {
       name: "@mintundmalve",
       title: "",
       rating: 5,
-      review: "Mega spannend! Ich liebe solche Bücher und dann noch so gestaltet! 😍 Kommt auf die Wunschliste! ❤️",
-      avatar: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150"
+      review: "Witzige Illustrationen. 😅 Das Thema finde ich auch mega spannend!",
+      avatar: "/mintundmalve.jpg"
     },
     {
-      name: "@frau_buecherfee",
+      name: "@janettsmeinung",
       title: "",
       rating: 5,
-      review: "Wie genial ist das gemacht 😍",
-      avatar: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=150"
+      review: "Ein spannendes Thema und auch sehr ansprechend und modern umgesetzt. Gefällt mir!",
+      avatar: "/janettsmeinung.jpg"
     },
     {
-      name: "@lisaliundsus",
+      name: "@favolina_und_junior",
       title: "",
       rating: 5,
-      review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek☺️",
-      avatar: "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=150"
+      review: "Oh wow, was für coole Illustrationen 😍",
+      avatar: "/favolina_und_junior.jpg"
     },
     {
-      name: "@liesa_kinderbuchbloggerin",
+      name: "@kinderbuchwelten",
       title: "",
       rating: 5,
-      review: "Ein super tolles Sachbuch! Toll illustriert und so informativ ☺️",
-      avatar: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150"
+      review: "Wooow das sieht ja krass aus 😂😍 total spannend 😮",
+      avatar: "/kinderbuchwelten.jpg"
+    },
+    {
+      name: "@kuestenkidsunterwegs",
+      title: "",
+      rating: 5,
+      review: "Toll, wenn Sachwissen so spannend präsentiert wird 👍📖",
+      avatar: "/kuestenkidsunterwegs.jpg"
     }
   ];
 
