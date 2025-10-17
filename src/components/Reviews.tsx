@@ -39,10 +39,10 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
 
   const reviews = [
     {
-      name: "@familienchaos_mal_5",
+      name: "@lisaliundsus",
       title: "",
       rating: 5,
-      review: "Sehr spannend, Dankeschön für die tolle Vorstellung! 😍",
+      review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek 🤗",
       avatar: "/familienchaos_mal_5.jpg"
     },
     {
@@ -165,22 +165,6 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 border-2 max-w-4xl mx-auto" style={{ borderColor: '#77A060' }}>
-            <h3 className="text-2xl font-bold text-black mb-4 font-lora">
-              Werde Teil der Gehirn-Entdecker Community!
-            </h3>
-            <p className="text-black mb-6 font-inter">
-              "Das Menschliche Gehirn" ist das perfekte Buch für neugierige Kinder, die verstehen wollen, wie ihr Gehirn funktioniert.
-            </p>
-            <button 
-              className="text-white px-8 py-4 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter" 
-              onClick={handleOpenPayment}
-            >
-              Jetzt dein Exemplar sichern
-            </button>
-          </div>
-        </div>
       </div>
 
       <PaymentModal

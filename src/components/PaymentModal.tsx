@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { X, CreditCard, User, Lock, Star, GraduationCap } from 'lucide-react';
 
@@ -170,13 +171,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
             <p className="text-sm sm:text-base text-gray-700 font-inter">Das Menschliche Gebirn</p>
             
-            {timeLeft && timeLeft > 0 && (
-              <div className="flex items-center justify-center space-x-2 mt-2 sm:mt-3 bg-red-50 border border-red-200 rounded-lg px-2 py-1 sm:px-3 sm:py-2">
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-xs sm:text-sm font-medium text-red-700">Angebot endet in {formatTime(timeLeft)}</span>
-              </div>
-            )}
-            
             <div className="flex items-center justify-center space-x-1 mt-2">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" />
@@ -270,21 +264,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <span className="text-sm sm:text-base font-medium text-gray-700 font-inter">Das Menschliche Gehirn E-Book</span>
-                  <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center space-x-1">
-                    <span>🔥</span>
-                    <span>25% SPAREN</span>
-                  </span>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs sm:text-sm text-gray-500 line-through font-inter">€19.99</span>
-                    <span className="text-xl sm:text-2xl font-bold text-red-600 font-lora">€14.99</span>
+                    <span className="text-xl sm:text-2xl font-bold text-red-600 font-lora">€24.99</span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-between mt-2">
                 <p className="text-xs text-gray-600 font-inter">✨ Sofortiger Download nach dem Kauf</p>
-                <span className="text-xs text-red-600 font-bold font-inter">Du sparst €5.00!</span>
               </div>
             </div>
 
@@ -302,8 +290,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
               ) : (
                 <div className="flex items-center justify-center space-x-2">
                   <Lock className="w-4 h-4" />
-                  <span>Jetzt nur €14.99 sichern</span>
-                  <span className="text-xs bg-white/20 px-2 py-1 rounded-full">-25%</span>
+                  <span>Jetzt €24.99 sichern</span>
                 </div>
               )}
             </button>

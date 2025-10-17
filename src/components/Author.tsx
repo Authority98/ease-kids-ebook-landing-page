@@ -72,7 +72,7 @@ const Author = () => {
               </p>
               
               <p className="font-inter">
-                Pablo hat außerdem am Imperial College London studiert, den renommierten Masterstudiengang „Science Media Production“ abgeschlossen und zweimal nationale Fördermittel (FECYT) für audiovisuelle Projekte gewonnen: Neurocosas  (2017) und Neuropíldoras  (2018). All diese Kenntnisse und Erfahrungen haben dazu geführt, dass er als Trainer in allen Aspekten der Wissenschaftskommunikation tätig ist. Sie können seine Arbeit verfolgen auf
+                Pablo hat außerdem am Imperial College London studiert, den renommierten Masterstudiengang „Science Media Production“ abgeschlossen und zweimal nationale Fördermittel (FECYT) für audiovisuelle Projekte gewonnen: Neurocosas  (2017) und Neuropíldoras  (2018). All diese Kenntnisse und Erfahrungen haben dazu geführt, dass er als Trainer in allen Aspekten der Wissenschaftskommunikation tätig ist. Sie können seine Arbeit hier verfolgen:
               </p>
             </div>
 
@@ -121,7 +121,7 @@ const Author = () => {
             
             <div className="space-y-4 text-black mb-8">
               <p className="font-inter">
-                „Ich bin ein zeichnendes Wesen, das sich der Visualisierung der Wissenschaft widmet, mit dem Wunsch, Kinder und Erwachsene gleichermaßen zu inspirieren“. – Isa Loureiro
+                „Ich bin eine zeichnende Natur, das sich der Visualisierung der Wissenschaft widmet, mit dem Wunsch, Kinder und Erwachsene gleichermaßen zu inspirieren“. – Isa Loureiro
               </p>
               
               <p className="font-inter">

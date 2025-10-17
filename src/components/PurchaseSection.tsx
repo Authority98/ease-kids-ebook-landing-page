@@ -53,7 +53,6 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
       title: "Hardcover",
       description: "Hochwertige Druckausgabe, perfekt zum Sammeln",
       price: "€24.99",
-      originalPrice: "€29.99",
       popular: true
     }
   ];
@@ -101,11 +100,6 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 font-lora">
             Hol dir dein Exemplar
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto mb-8 font-inter">
-            Wähle dein bevorzugtes Format und starte deine Reise ins Gehirn
-          </p>
-          
-
         </div>
 
         {/* Video Preview Section */}
@@ -173,7 +167,6 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
                 <div className="mb-6">
                   <div className="flex items-center justify-center space-x-2">
                     <span className="text-3xl font-bold text-black font-lora">{format.price}</span>
-                    <span className="text-lg text-black/50 line-through font-inter">{format.originalPrice}</span>
                   </div>
                 </div>
                 

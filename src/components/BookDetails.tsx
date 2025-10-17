@@ -31,7 +31,7 @@ const BookDetails = () => {
     {
       icon: <Star className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Wow-Momente",
-      description: "Überraschende Fakten, die im Kopf bleiben."
+      description: "Überraschende Fakten, die in Erinnerung bleiben"
     }
   ];
 
