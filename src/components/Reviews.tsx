@@ -43,7 +43,7 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
       title: "",
       rating: 5,
       review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek 🤗",
-      avatar: "/familienchaos_mal_5.jpg"
+      avatar: "/lisaliundsus.jpg"
     },
     {
       name: "@mintundmalve",

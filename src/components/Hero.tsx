@@ -130,7 +130,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
                 <img 
                     src="/book-cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                  className="w-96 h-[28rem] object-cover rounded-2xl shadow-2xl"
+                  className="w-96 h-96 object-cover rounded-2xl shadow-2xl"
                 />
                 <div className="absolute -top-4 -right-4 text-white font-bold px-6 py-3 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 text-lg">
                   Bestseller!

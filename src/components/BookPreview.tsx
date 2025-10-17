@@ -1,8 +1,5 @@
 import React from 'react';
 import { BookOpen, Eye, Lightbulb, Star, GraduationCap } from 'lucide-react';
-// Removed: import HTMLFlipBook from 'react-pageflip';
-
-// Removed: const Page = React.forwardRef(...);
 
 const BookPreview = () => {
   return (
@@ -48,13 +45,13 @@ const BookPreview = () => {
               allowFullScreen={true}
               allow="clipboard-write" 
               scrolling="no" 
-              className="fp-iframe rounded-lg shadow-2xl" 
+              className="fp-iframe" 
               style={{
-                border: '0px', 
+                border: '1px solid lightgray', 
                 width: '100%', 
                 height: '400px'
               }}
-              src="https://heyzine.com/flip-book/843f012ca4.html"
+              src="https://heyzine.com/flip-book/a41e8774c6.html"
             ></iframe>
           </div>
         </div>
