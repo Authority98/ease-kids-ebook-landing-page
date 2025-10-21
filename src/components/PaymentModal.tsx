@@ -169,7 +169,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
             </div>
             
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 font-lora">Sichere Zahlung</h3>
-            <p className="text-sm sm:text-base text-gray-700 font-inter">Das Menschliche Gebirn</p>
+            <p className="text-sm sm:text-base text-gray-700 font-inter">Das Menschliche Gehirn</p>
             
             <div className="flex items-center justify-center space-x-1 mt-2">
               {[...Array(5)].map((_, i) => (
@@ -267,7 +267,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
                 </div>
                 <div className="text-right">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xl sm:text-2xl font-bold text-red-600 font-lora">€24.99</span>
+                    <span className="text-xl sm:text-2xl font-bold text-red-600 font-lora">CHF 26.50</span>
                   </div>
                 </div>
               </div>
@@ -290,7 +290,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, timeLeft, 
               ) : (
                 <div className="flex items-center justify-center space-x-2">
                   <Lock className="w-4 h-4" />
-                  <span>Jetzt €24.99 sichern</span>
+                  <span>Jetzt CHF 26.50 sichern</span>
                 </div>
               )}
             </button>

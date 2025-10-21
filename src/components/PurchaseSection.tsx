@@ -51,8 +51,8 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
     {
       icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Hardcover",
-      description: "Hochwertige Druckausgabe, perfekt zum Sammeln",
-      price: "€24.99",
+      description: "Hochwertige Druckausgabe",
+      price: "CHF 26.50",
       popular: true
     }
   ];
@@ -107,9 +107,9 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-[#77A060]/20">
               <div className="relative cursor-pointer" onClick={handleOpenVideo}>
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+                <div className="relative w-full aspect-square">
                   <img 
-                    src="/book-cover.png" 
+                    src="/cover.png" 
                     alt="Video Thumbnail"
                     className="absolute inset-0 w-full h-full object-cover rounded-t-3xl"
                   />

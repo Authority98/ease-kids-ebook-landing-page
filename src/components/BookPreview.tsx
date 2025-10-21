@@ -51,7 +51,7 @@ const BookPreview = () => {
                 width: '100%', 
                 height: '400px'
               }}
-              src="https://heyzine.com/flip-book/a41e8774c6.html"
+              src="https://heyzine.com/flip-book/eae11bc837.html"
             ></iframe>
           </div>
         </div>

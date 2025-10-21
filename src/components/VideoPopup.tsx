@@ -75,8 +75,14 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
           <video 
             controls 
             autoPlay 
+            playsInline
+            muted
             className="w-full h-auto max-h-[70vh] object-contain"
-            poster="/book-cover.png"
+            poster="/cover.png"
+            preload="metadata"
+            onError={(e) => console.error('Video error:', e)}
+            onWaiting={(e) => console.log('Video waiting for data:', e)}
+            crossOrigin="anonymous"
           >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.

@@ -91,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             </h1>
             
             <p className="text-xl text-black mb-8 leading-relaxed font-inter">
-              Entdecke die faszinierende Welt deines Gehirns! Eine spannende Reise durch Neuronen, Synapsen und die Geheimnisse des Denkens - erzählt von Dr. Santiago Ramón y Cajal selbst!
+              Entdecke die faszinierende Welt deines Gehirns! Eine spannende Reise durch Neuronen, Synapsen und die Geheimnisse des Denkens - erklärt von Dr. Santiago Ramón y Cajal
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -127,11 +127,13 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             <div className="relative">
               <div className="absolute inset-0 bg-black/10 rounded-3xl transform rotate-6 scale-105"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-6 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                <img 
-                    src="/book-cover.png" 
+                <div className="aspect-square overflow-hidden rounded-2xl shadow-2xl">
+                  <img 
+                    src="/cover.png" 
                     alt="Das Menschliche Gehirn Buchcover"
-                  className="w-96 h-96 object-cover rounded-2xl shadow-2xl"
-                />
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="absolute -top-4 -right-4 text-white font-bold px-6 py-3 rounded-full transform rotate-12 shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700 text-lg">
                   Bestseller!
                 </div>
@@ -152,7 +154,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
       </svg>
 
       <VideoPopup
-        videoUrl="/file notion soff4ba56e7e-57ed-400d-9030-c03c0514f7e68d6ddfa9-43f.mp4"
+        videoUrl="/book-preview.mp4"
         isOpen={isVideoOpen}
         onClose={handleCloseVideo}
         timeLeft={timeLeft}
