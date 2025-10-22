@@ -11,6 +11,8 @@ interface VideoPopupProps {
 
 const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, timeLeft }) => {
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const handleOpenPayment = () => {
     setIsPaymentOpen(true);
@@ -18,6 +20,16 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
 
   const handleClosePayment = () => {
     setIsPaymentOpen(false);
+  };
+
+  const handleVideoLoad = () => {
+    setIsLoading(false);
+  };
+
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    setIsLoading(false);
+    setError('Failed to load video. Please try again later.');
+    console.error('Video error:', e);
   };
 
   // Close modal on Escape key press
@@ -72,6 +84,30 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
 
         {/* Video Container */}
         <div className="relative bg-black">
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#77A060]"></div>
+            </div>
+          )}
+          
+          {error && (
+            <div className="absolute inset-0 flex items-center justify-center z-10 text-white p-4 text-center">
+              <div>
+                <p className="text-lg font-bold mb-2">Video Loading Error</p>
+                <p className="text-sm mb-4">{error}</p>
+                <button 
+                  className="px-4 py-2 bg-[#77A060] text-white rounded hover:bg-green-700"
+                  onClick={() => {
+                    setError(null);
+                    setIsLoading(true);
+                  }}
+                >
+                  Retry
+                </button>
+              </div>
+            </div>
+          )}
+          
           <video 
             controls 
             autoPlay 
@@ -79,10 +115,11 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
             muted
             className="w-full h-auto max-h-[70vh] object-contain"
             poster="/cover.png"
-            preload="metadata"
-            onError={(e) => console.error('Video error:', e)}
-            onWaiting={(e) => console.log('Video waiting for data:', e)}
+            preload="auto"
+            onLoadedData={handleVideoLoad}
+            onError={handleVideoError}
             crossOrigin="anonymous"
+            style={{ backgroundColor: 'black' }}
           >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
