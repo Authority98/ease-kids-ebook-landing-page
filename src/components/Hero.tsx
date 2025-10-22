@@ -154,7 +154,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
       </svg>
 
       <VideoPopup
-        videoUrl="/TheHumanBrain.mp4"
+        videoUrl="https://example.com/TheHumanBrain.mp4"
         isOpen={isVideoOpen}
         onClose={handleCloseVideo}
         timeLeft={timeLeft}
