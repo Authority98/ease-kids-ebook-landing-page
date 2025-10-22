@@ -84,11 +84,6 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
 
         {/* Video Container */}
         <div className="relative bg-black">
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#77A060]"></div>
-            </div>
-          )}
           
           {error && (
             <div className="absolute inset-0 flex items-center justify-center z-10 text-white p-4 text-center">
@@ -112,11 +107,9 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoUrl, onClose, isOpen, time
             controls 
             autoPlay 
             playsInline
-            muted
             className="w-full h-auto max-h-[70vh] object-contain"
             poster="/cover.png"
             preload="auto"
-            onLoadedData={handleVideoLoad}
             onError={handleVideoError}
             crossOrigin="anonymous"
             style={{ backgroundColor: 'black' }}
