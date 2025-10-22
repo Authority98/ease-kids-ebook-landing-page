@@ -16,12 +16,12 @@ const BookDetails = () => {
     {
       icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "64 Seiten",
-      description: "Voller spannender Illustrationen und Grafiken"
+      description: "Voller spannender Illustrationen und Grafiken."
     },
     {
       icon: <Lightbulb className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Leicht verständlich",
-      description: "Selbst bei komplexen Themen"
+      description: "Selbst bei komplexen Themen."
     },
     {
       icon: <Heart className="w-8 h-8" style={{ color: '#77A060' }} />,
@@ -31,7 +31,7 @@ const BookDetails = () => {
     {
       icon: <Star className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Wow-Momente",
-      description: "Überraschende Fakten, die in Erinnerung bleiben"
+      description: "Überraschende Fakten, die in Erinnerung bleiben."
     }
   ];
 

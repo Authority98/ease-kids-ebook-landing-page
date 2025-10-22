@@ -91,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             </h1>
             
             <p className="text-xl text-black mb-8 leading-relaxed font-inter">
-              Entdecke die faszinierende Welt deines Gehirns! Eine spannende Reise durch Neuronen, Synapsen und die Geheimnisse des Denkens - erklärt von Dr. Santiago Ramón y Cajal
+              Entdecke die faszinierende Welt deines Gehirns! Eine spannende Reise durch Neuronen, Synapsen und die Geheimnisse des Denkens - erklärt von Dr. Santiago Ramón y Cajal.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

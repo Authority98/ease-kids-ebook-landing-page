@@ -42,7 +42,7 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
       name: "@lisaliundsus",
       title: "",
       rating: 5,
-      review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek 🤗",
+      review: "Tolle Illustrationen! Das ist bestimmt auch was für die Schulbibliothek. 🤗",
       avatar: "/lisaliundsus.jpg"
     },
     {
@@ -126,7 +126,7 @@ const Reviews: React.FC<ReviewsProps> = ({ timeLeft }) => {
             </defs>
           </svg>
           <p className="text-xl text-black font-inter">
-            Bewertungen von Eltern, Buchrezensenten und begeisterten Lesern
+            Bewertungen von Eltern, Buchrezensenten und begeisterten Lesern.
           </p>
         </div>
 

@@ -51,18 +51,18 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
     {
       icon: <BookOpen className="w-8 h-8" style={{ color: '#77A060' }} />,
       title: "Hardcover",
-      description: "Hochwertige Druckausgabe",
+      description: "Hochwertige Druckausgabe.",
       price: "CHF 26.50",
       popular: true
     }
   ];
 
   const features = [
-    "Lebenslanger Zugang zu digitalen Updates",
-    "Exklusiver Zugang zur Leser-Community",
-    "Bonus-Aktivitäten und Experimente",
-    "Interaktive digitale Ressourcen",
-    "30 Tage Geld-zurück-Garantie"
+    "Lebenslanger Zugang zu digitalen Updates.",
+    "Exklusiver Zugang zur Leser-Community.",
+    "Bonus-Aktivitäten und Experimente.",
+    "Interaktive digitale Ressourcen.",
+    "30 Tage Geld-zurück-Garantie."
   ];
 
   return (
@@ -122,7 +122,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
               </div>
               <div className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2 font-lora">Buchvorschau ansehen</h3>
-                <p className="text-gray-600 font-inter">Entdecke die faszinierende Welt des menschlichen Gehirns</p>
+                <p className="text-gray-600 font-inter">Entdecke die faszinierende Welt des menschlichen Gehirns.</p>
                 <button 
                   onClick={handleOpenVideo}
                   className="mt-4 px-6 py-3 bg-gradient-to-r from-[#77A060] to-green-700 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
@@ -145,11 +145,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
               }`}
               style={{ borderColor: format.popular ? '#77A060' : '#d1d5db' }}
             >
-              {format.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg font-inter bg-gradient-to-r from-[#77A060] to-green-700">
-                  Beliebteste Wahl
-                </div>
-              )}
+
               
               <div className="text-center">
                 <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 flex justify-center">
@@ -192,7 +188,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
 
         <div className="text-center mt-16">
           <p className="text-black mb-4 font-inter">
-            Sichere Bezahlung mit branchenführender Verschlüsselung
+            Sichere Bezahlung mit branchenführender Verschlüsselung.
           </p>
           <div className="flex items-center justify-center space-x-8">
 

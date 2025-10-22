@@ -40,7 +40,7 @@ const Author = () => {
             Lerne den Autor kennen
           </h2>
           <p className="text-xl text-black max-w-3xl mx-auto font-inter">
-            Ein leidenschaftlicher Wissenschaftler, der komplexe Themen für Kinder verständlich macht
+            Ein leidenschaftlicher Wissenschaftler, der komplexe Themen für Kinder verständlich macht.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ const Author = () => {
               Isa Loureiro
             </h3>
             <p className="text-xl mb-6 font-inter" style={{ color: '#77A060' }}>
-              Illustratorin & Wissenschaftliche Visualisierung
+              Illustratorin & Wissenschaftliche Visualisierung.
             </p>
             
             <div className="space-y-4 text-black mb-8">
@@ -199,7 +199,7 @@ const Author = () => {
               Teresa Ruiz Rosas
             </h3>
             <p className="text-xl mb-6 font-inter" style={{ color: '#77A060' }}>
-              Übersetzerin & Schriftstellerin
+              Übersetzerin & Schriftstellerin.
             </p>
             
             <div className="space-y-4 text-black mb-8">
