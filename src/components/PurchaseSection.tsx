@@ -201,7 +201,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
       </div>
 
       <VideoPopup
-        videoUrl="https://example.com/TheHumanBrain.mp4"
+        videoUrl="/TheHumanBrain.mp4"
         isOpen={isVideoOpen}
         onClose={handleCloseVideo}
         timeLeft={timeLeft}
