@@ -96,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
-                href="https://buy.stripe.com/8x2eVd72I9orda9amdb3q00"
+                href="https://ease-kids.ch/?add-to-cart=1142"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter inline-block text-center" 

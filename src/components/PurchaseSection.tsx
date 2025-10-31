@@ -167,7 +167,7 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
                 </div>
                 
                 <a 
-                  href="https://buy.stripe.com/8x2eVd72I9orda9amdb3q00"
+                  href="https://ease-kids.ch/?add-to-cart=1142"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter inline-block text-center ${

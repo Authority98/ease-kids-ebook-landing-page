@@ -120,10 +120,9 @@ vite.config.ts
 - **Top Bar Removal**:
   - Removed the promotional top bar displaying "Begrenztes Angebot 25% SPAREN Endet in 5:00".
 
-
-
-
-
+- **Payment Link Update**:
+  - Updated purchase links from Stripe to direct WooCommerce cart addition.
+  - All purchase buttons now redirect to `https://ease-kids.ch/?add-to-cart=1142`.
 
 ## Contributing
 
