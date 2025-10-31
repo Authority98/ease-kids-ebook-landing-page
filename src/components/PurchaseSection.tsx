@@ -166,8 +166,11 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
                   </div>
                 </div>
                 
-                <button 
-                  className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter ${
+                <a 
+                  href="https://buy.stripe.com/8x2eVd72I9orda9amdb3q00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-4 rounded-xl font-bold transition-all duration-300 font-inter inline-block text-center ${
                     format.popular
                       ? 'text-white transform hover:scale-105 shadow-lg bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800'
                       : 'border-2 text-black hover:text-white bg-gradient-to-r from-transparent to-transparent hover:from-[#77A060] hover:to-green-700'
@@ -175,10 +178,9 @@ const PurchaseSection: React.FC<PurchaseSectionProps> = ({ timeLeft }) => {
                   style={{ 
                     borderColor: format.popular ? 'transparent' : '#77A060'
                   }}
-                  onClick={handleOpenPayment}
                 >
                   {format.popular ? 'Jetzt kaufen' : `${format.title} wählen`}
-                </button>
+                </a>
               </div>
             </div>
           ))}

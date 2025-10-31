@@ -95,13 +95,15 @@ const Hero: React.FC<HeroProps> = ({ timeLeft }) => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button 
-                className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter" 
-                onClick={handleOpenPayment}
+              <a 
+                href="https://buy.stripe.com/8x2eVd72I9orda9amdb3q00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-[#77A060] to-green-700 hover:from-green-700 hover:to-green-800 font-inter inline-block text-center" 
               >
                 <Download className="inline w-5 h-5 mr-2" />
                 Jetzt kaufen
-              </button>
+              </a>
               <button
                 className="group border-2 border-black text-black px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:bg-black/10 font-inter"
                 onClick={handleOpenVideo}
